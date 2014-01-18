@@ -1,0 +1,8 @@
+{
+	"name": "moneyuse",
+	"devDependencies": {
+		"grunt": "~0.4.2",
+		"grunt-contrib-watch": "0.5.3",
+		"grunt-sass": "0.10.0"
+	}
+}
