@@ -1,0 +1,41 @@
+<head>
+	<meta charset="utf-8">
+	<link rel="icon" href="/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	@viewport {
+		zoom: 1.0;
+		width: device-width;
+	}
+	@-ms-viewport {
+		width: device-width;
+		zoom: 1.0;
+	}
+	</style>
+</head>
+
+<template name="layout">
+	{{> header}}
+	<div class="body">
+		{{yield}}
+	</div>
+	{{> footer}}
+</template>
+
+<template name="header">
+	<nav class="top-bar" data-topbar>
+		<ul class="title-area">
+			<li class="name">
+				<h1><a href="{{pathFor 'home'}}">MoneyUse</a></h1>
+			</li>
+			<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+		</ul>
+	</nav>
+</template>
+
+<template name="footer">
+
+</template>
+
+<template name="home">
+</template>
