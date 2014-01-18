@@ -1,5 +1,8 @@
 {
   "packages": {
-    "iron-router": {}
+    "iron-router": {},
+    "foundation": {
+    	"path": "../meteor-foundation-scss/"
+    }
   }
 }
