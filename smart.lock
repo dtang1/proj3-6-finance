@@ -3,9 +3,12 @@
   "dependencies": {
     "basePackages": {
       "iron-router": {},
+      "fast-render": {},
       "foundation": {
         "path": "../meteor-foundation-scss"
-      }
+      },
+      "bourbon-scss": {},
+      "neat-scss": {}
     },
     "packages": {
       "iron-router": {
@@ -13,8 +16,23 @@
         "tag": "v0.6.2",
         "commit": "ce56e58b45624dce992490f3a1c10f10d3948bae"
       },
+      "fast-render": {
+        "git": "https://github.com/arunoda/meteor-fast-render.git",
+        "tag": "v0.1.11",
+        "commit": "7514e0e8f6f387f7ba510eb633568831a066b481"
+      },
       "foundation": {
         "path": "../meteor-foundation-scss"
+      },
+      "bourbon-scss": {
+        "git": "https://github.com/stevezhu/meteor-bourbon.git",
+        "tag": "v3.1.8.4",
+        "commit": "9c36e7bbc40ab7b8930a45a6bf0b41b0d582eaf1"
+      },
+      "neat-scss": {
+        "git": "https://github.com/stevezhu/meteor-neat.git",
+        "tag": "v1.5.0.7",
+        "commit": "1a3c439a121c1017b50b10d75657837f6cd8298d"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
