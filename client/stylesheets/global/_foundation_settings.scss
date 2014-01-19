@@ -37,8 +37,8 @@ $include-html-global-classes: true;
 // We use these to control various global styles
 // $body-bg: #fff;
 // $body-font-color: #222;
-// $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
+$body-font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
+$body-font-weight: 300;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
@@ -780,7 +780,7 @@ $include-html-global-classes: true;
 
 // Side Nav
 
-// $include-html-nav-classes: $include-html-classes;
+$include-html-nav-classes: false;
 
 // We use this to control padding.
 // $side-nav-padding: rem-calc(14 0);
@@ -915,7 +915,7 @@ $include-html-global-classes: true;
 
 // Tables
 
-// $include-html-table-classes: $include-html-classes;
+$include-html-table-classes: false;
 
 // These control the background color for the table and even rows
 // $table-bg: #fff;

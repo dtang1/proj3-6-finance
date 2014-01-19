@@ -1,0 +1,120 @@
+* {
+	box-sizing: border-box;
+}
+
+html {
+	min-height: 100%;
+}
+
+body {
+	//background: -webkit-radial-gradient(10% 0, farthest-side ellipse, rgba(102, 105, 104, 0.9), rgba(93, 112, 119, 0.89), rgba(160, 174, 150, 0.9)), url("http://demo.okendoken.com/img/bgnoise_lg_dark.png");
+	background-color: #383838;
+}
+
+.top-bar {
+	background: none;
+	.name h1 a {
+		padding-left: 60px;
+	}
+}
+
+table {
+	width: 100%;
+
+	thead {
+		border-bottom: 2px solid #DDD;
+	}
+
+	th {
+		padding: 0.7em;
+		font-weight: 300;
+	}
+}
+
+@mixin sidenav(
+	$base-font-size: 13em/16,
+	$text-color: gray,
+	$bg-color: white, //rgba(51, 51, 51, 0.4)
+	$hover-bg-color: #F5F5F5,// rgba(51, 51, 51, 0.3)
+	$active-border-color: #76D3FF, // white
+	$sidenav-width: 14em,
+	$sidenav-margin: 2em
+) {
+	%box {
+		border-radius: 1px;
+		background-color: $bg-color;
+		color: $text-color;
+	}
+
+	.sidenav {
+		@extend %box;
+		margin: 0;
+
+		padding: 0.4em 0;
+		box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.5);
+		font-size: $base-font-size;
+
+		ul, li, a {
+			font-size: inherit;
+		}
+
+		li {
+			list-style: none;
+			&.active > a {
+				border-left: 0.3em solid $active-border-color;
+				background-color: $hover-bg-color;
+			}
+		}
+
+		a {
+			@include transition(background-color 0.2s);
+			display: block;
+			padding: 0.7em 1.7em;
+			color: inherit;
+			line-height: 1.5em;
+			&:hover {
+				background-color: $hover-bg-color;
+			}
+		}
+
+		// subnav
+		// > li > ul
+		.subnav {
+			margin-left: 0.3em;
+			a {
+				padding: 0.4em;
+				padding-left: 2em;
+				&:before {
+					padding-right: 0.5em;
+					content: "»";
+					font-size: 1.4em;
+				}
+			}
+		}
+	}
+
+	.content {
+		padding: 5% 0;
+		color: $text-color;
+		font-size: $base-font-size;
+
+		.box {
+			@extend %box;
+			padding: 1.4em;
+		}
+	}
+
+	@media only screen and (min-width: 500px) {
+		.sidenav {
+			position: absolute;
+			margin-top: $sidenav-margin;
+			margin-left: $sidenav-margin;
+			width: 14em;
+		}
+		.content {
+			margin-left: $sidenav-width + $sidenav-margin;
+			padding: $sidenav-margin;
+		}
+	}
+}
+@include sidenav;

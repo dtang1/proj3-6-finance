@@ -14,8 +14,9 @@
 	</style>
 </head>
 
+<template name="notFound">Not Found</template>
+
 <template name="layout">
-	{{> header}}
 	<div class="body">
 		{{yield}}
 	</div>
@@ -26,9 +27,13 @@
 	<nav class="top-bar" data-topbar>
 		<ul class="title-area">
 			<li class="name">
-				<h1><a href="{{pathFor 'home'}}">MoneyUse</a></h1>
+				<h1>
+					<a href="{{pathFor 'home'}}">MoneyUse</a>
+				</h1>
 			</li>
-			<li class="toggle-topbar menu-icon"><a href="#">Menu</a></li>
+			<li class="toggle-topbar menu-icon">
+				<a href="#"></a>
+			</li>
 		</ul>
 	</nav>
 </template>
@@ -38,4 +43,30 @@
 </template>
 
 <template name="home">
+	{{> header}}
+	<ul class="sidenav">
+		<li class="active">
+			<a href="#">Accounts</a>
+			<ul class="subnav">
+				<li><a href="#">Expenses</a></li>
+				<li><a href="#">Savings</a></li>
+			</ul>
+		</li>
+		<li>
+			<a href="#">Settings</a>
+		</li>
+	</ul>
+	<div class="content">
+		<div class="box">
+			<table>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Info</th>
+						<th>Cost</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+	</div>
 </template>
