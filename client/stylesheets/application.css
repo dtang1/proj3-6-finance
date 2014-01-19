@@ -7156,11 +7156,11 @@ table {
     /* line 78, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .sidenav a i.fa {
       float: right;
-      font-size: 1.3em;
+      font-size: 1.2em;
       line-height: inherit; }
       /* line 82, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
       .sidenav a i.fa:before {
-        vertical-align: middle; }
+        vertical-align: bottom; }
   /* line 90, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav .subnav {
     margin-left: 0.3em; }
