@@ -2,10 +2,13 @@
   "packages": {
     "iron-router": {},
     "fast-render": {},
-    "foundation": {
-    	"path": "../meteor-foundation-scss/"
-    },
     "bourbon-scss": {},
-    "neat-scss": {}
+    "neat-scss": {},
+    "foundation": {
+      "path": "../meteor-foundation-scss"
+    },
+    "font-awesome-scss": {
+      "path": "../meteor-font-awesome-scss"
+    }
   }
 }

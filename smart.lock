@@ -4,11 +4,14 @@
     "basePackages": {
       "iron-router": {},
       "fast-render": {},
+      "bourbon-scss": {},
+      "neat-scss": {},
       "foundation": {
         "path": "../meteor-foundation-scss"
       },
-      "bourbon-scss": {},
-      "neat-scss": {}
+      "font-awesome": {
+        "path": "../meteor-font-awesome"
+      }
     },
     "packages": {
       "iron-router": {
@@ -21,9 +24,6 @@
         "tag": "v0.1.11",
         "commit": "7514e0e8f6f387f7ba510eb633568831a066b481"
       },
-      "foundation": {
-        "path": "../meteor-foundation-scss"
-      },
       "bourbon-scss": {
         "git": "https://github.com/stevezhu/meteor-bourbon.git",
         "tag": "v3.1.8.4",
@@ -33,6 +33,12 @@
         "git": "https://github.com/stevezhu/meteor-neat.git",
         "tag": "v1.5.0.7",
         "commit": "1a3c439a121c1017b50b10d75657837f6cd8298d"
+      },
+      "foundation": {
+        "path": "../meteor-foundation-scss"
+      },
+      "font-awesome": {
+        "path": "../meteor-font-awesome"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
