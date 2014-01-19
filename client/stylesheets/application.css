@@ -1,3 +1,4 @@
+@import url("http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800");
 /* line 293, ../packages/foundation/foundation/components/global */
 meta.foundation-mq-small {
   font-family: "/only screen and (max-width: 40em)/";
@@ -40,7 +41,7 @@ body {
   padding: 0;
   margin: 0;
   font-family: "Open Sans", "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   font-style: normal;
   line-height: 1;
   position: relative;
@@ -7088,7 +7089,6 @@ th.hide-for-touch {
 .fa-plus-square-o:before {
   content: "\f196"; }
 
-@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 /* line 1, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
 * {
   box-sizing: border-box; }
@@ -7130,7 +7130,7 @@ table {
   margin: 0;
   padding: 0.4em 0;
   box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.5);
-  font-size: 0.8125em; }
+  font-size: 0.75em; }
   /* line 57, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav ul, .sidenav li, .sidenav a {
     font-size: inherit; }
@@ -7175,7 +7175,7 @@ table {
 .content {
   padding: 5% 0;
   color: grey;
-  font-size: 0.8125em; }
+  font-size: 0.75em; }
   /* line 108, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .content .box {
     padding: 1.4em; }

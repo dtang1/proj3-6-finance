@@ -7,10 +7,12 @@
       "bourbon-scss": {},
       "neat-scss": {},
       "foundation": {
-        "path": "../meteor-foundation-scss"
+        "git": "https://github.com/stevezhu/meteor-foundation-scss.git",
+        "branch": "master"
       },
       "font-awesome-scss": {
-        "path": "../meteor-font-awesome-scss"
+        "git": "https://github.com/stevezhu/meteor-font-awesome-scss.git",
+        "branch": "master"
       }
     },
     "packages": {
@@ -35,10 +37,14 @@
         "commit": "1a3c439a121c1017b50b10d75657837f6cd8298d"
       },
       "foundation": {
-        "path": "../meteor-foundation-scss"
+        "git": "https://github.com/stevezhu/meteor-foundation-scss.git",
+        "branch": "master",
+        "commit": "9225ff3e4609d1fa817bbac4adc9849d7a4ba00e"
       },
       "font-awesome-scss": {
-        "path": "../meteor-font-awesome-scss"
+        "git": "https://github.com/stevezhu/meteor-font-awesome-scss.git",
+        "branch": "master",
+        "commit": "677a2277a8b21eda68307427144b37ce8037c633"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
