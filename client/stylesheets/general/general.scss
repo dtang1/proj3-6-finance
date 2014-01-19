@@ -48,8 +48,8 @@ table {
 
 	.sidenav {
 		@extend %box;
-		margin: 0;
 
+		margin: 0;
 		padding: 0.4em 0;
 		box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.5);
 		font-size: $base-font-size;
@@ -74,6 +74,14 @@ table {
 			line-height: 1.5em;
 			&:hover {
 				background-color: $hover-bg-color;
+			}
+			i.fa {
+				float: right;
+				font-size: 1.3em;
+				line-height: inherit;
+				&:before {
+					vertical-align: middle;
+				}
 			}
 		}
 
