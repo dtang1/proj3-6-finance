@@ -5,10 +5,10 @@
     "bourbon-scss": {},
     "neat-scss": {},
     "foundation": {
-      "path": "../meteor-foundation-scss"
+      "git": "https://github.com/stevezhu/meteor-foundation-scss.git"
     },
     "font-awesome-scss": {
-      "path": "../meteor-font-awesome-scss"
+      "git": "https://github.com/stevezhu/meteor-font-awesome-scss.git"
     }
   }
 }
