@@ -79,9 +79,6 @@ table {
 				float: right;
 				font-size: 1.2em;
 				line-height: inherit;
-				&:before {
-					vertical-align: bottom;
-				}
 			}
 		}
 
@@ -93,8 +90,10 @@ table {
 				padding: 0.4em;
 				padding-left: 2em;
 				&:before {
+					@extend .fa-angle-double-right:before;
+					@extend .fa;
 					padding-right: 0.5em;
-					content: "»";
+					vertical-align: top;
 					font-size: 1.4em;
 				}
 			}

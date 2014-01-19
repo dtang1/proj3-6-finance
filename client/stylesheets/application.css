@@ -5407,7 +5407,7 @@ th.hide-for-touch {
   font-style: normal; }
 
 /* line 1, ../packages/font-awesome-scss/stylesheets/core */
-.fa {
+.fa, .sidenav .subnav a:before {
   display: inline-block;
   font-family: FontAwesome;
   font-style: normal;
@@ -6529,7 +6529,7 @@ th.hide-for-touch {
   content: "\f100"; }
 
 /* line 233, ../packages/font-awesome-scss/stylesheets/icons */
-.fa-angle-double-right:before {
+.fa-angle-double-right:before, .sidenav .subnav a:before {
   content: "\f101"; }
 
 /* line 234, ../packages/font-awesome-scss/stylesheets/icons */
@@ -7158,39 +7158,36 @@ table {
       float: right;
       font-size: 1.2em;
       line-height: inherit; }
-      /* line 82, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
-      .sidenav a i.fa:before {
-        vertical-align: bottom; }
-  /* line 90, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 87, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav .subnav {
     margin-left: 0.3em; }
-    /* line 92, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 89, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .sidenav .subnav a {
       padding: 0.4em;
       padding-left: 2em; }
-      /* line 95, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+      /* line 92, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
       .sidenav .subnav a:before {
         padding-right: 0.5em;
-        content: "»";
+        vertical-align: top;
         font-size: 1.4em; }
 
-/* line 104, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 103, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
 .content {
   padding: 5% 0;
   color: grey;
   font-size: 0.8125em; }
-  /* line 109, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 108, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .content .box {
     padding: 1.4em; }
 
 @media only screen and (min-width: 500px) {
-  /* line 116, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 115, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav {
     position: absolute;
     margin-top: 2em;
     margin-left: 2em;
     width: 14em; }
-  /* line 122, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 121, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .content {
     margin-left: 16em;
     padding: 2em; } }
