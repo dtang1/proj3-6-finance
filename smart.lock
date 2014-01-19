@@ -9,8 +9,8 @@
       "foundation": {
         "path": "../meteor-foundation-scss"
       },
-      "font-awesome": {
-        "path": "../meteor-font-awesome"
+      "font-awesome-scss": {
+        "path": "../meteor-font-awesome-scss"
       }
     },
     "packages": {
@@ -37,8 +37,8 @@
       "foundation": {
         "path": "../meteor-foundation-scss"
       },
-      "font-awesome": {
-        "path": "../meteor-font-awesome"
+      "font-awesome-scss": {
+        "path": "../meteor-font-awesome-scss"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",

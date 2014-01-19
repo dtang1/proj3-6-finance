@@ -9,4 +9,4 @@ preserve-inputs
 iron-router
 foundation
 normalize.css
-font-awesome
+font-awesome-scss
