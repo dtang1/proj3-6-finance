@@ -1,41 +1,41 @@
 <head>
-    <meta charset="utf-8">
-    <link rel="icon" href="/favicon.ico">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <style>
-        @viewport {
-            zoom: 1.0;
-            width: device-width;
-        }
-        @-ms-viewport {
-            width: device-width;
-            zoom: 1.0;
-        }
-    </style>
+	<meta charset="utf-8">
+	<link rel="icon" href="/favicon.ico">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+	@viewport {
+		zoom: 1.0;
+		width: device-width;
+	}
+	@-ms-viewport {
+		width: device-width;
+		zoom: 1.0;
+	}
+	</style>
 </head>
 
 <template name="notFound">Not Found</template>
 
 <template name="layout">
-<div class="body">
-    {{yield}}
-</div>
-{{> footer}}
+	<div class="body">
+		{{yield}}
+	</div>
+	{{> footer}}
 </template>
 
 <template name="header">
-<nav class="top-bar" data-topbar>
-<ul class="title-area">
-    <li class="name">
-    <h1>
-        <a href="{{pathFor 'home'}}">MoneyUse</a>
-    </h1>
-    </li>
-    <li class="toggle-topbar menu-icon">
-    <a href="#"></a>
-    </li>
-</ul>
-</nav>
+	<nav class="top-bar" data-topbar>
+		<ul class="title-area">
+			<li class="name">
+				<h1>
+					<a href="{{pathFor 'home'}}">MoneyUse</a>
+				</h1>
+			</li>
+			<li class="toggle-topbar menu-icon">
+				<a href="#"></a>
+			</li>
+		</ul>
+	</nav>
 </template>
 
 <template name="footer">
@@ -43,72 +43,80 @@
 </template>
 
 <template name="home">
-{{> header}}
-<ul class="sidenav">
-    <li class="active">
-    <a href="#"><i class="fa fa-credit-card"></i>Accounts</a>
-    <ul class="subnav">
-        <li><a href="#">Expenses</a></li>
-        <li><a href="#">Savings</a></li>
-    </ul>
-    </li>
-    <li>
-    <a href="#"><i class="fa fa-cog"></i>Settings</a>
-    </li>
-</ul>
-<div class="content">
-    <div class="box">
-        <table>
-            <thead>
-                <tr>
-                    <th>Date</th>
-                    <th>Info</th>
-                    <th>Cost</th>
-                </tr>
-            </thead>
-        </table>
-    </div>
-    {{>cardFull}}
-    {{>cardUsed}}
-    {{>cardUsed}}
-</div>
+	{{> header}}
+	<ul class="sidenav">
+		<li class="active">
+			<a href="#"><i class="fa fa-credit-card"></i>Accounts</a>
+			<ul class="subnav">
+				<li><a href="#">Expenses</a>
+				</li>
+				<li><a href="#">Savings</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#"><i class="fa fa-cog"></i>Settings</a>
+		</li>
+	</ul>
+	<div class="content">
+		<div class="box">
+			<table>
+				<thead>
+					<tr>
+						<th>Date</th>
+						<th>Info</th>
+						<th>Cost</th>
+					</tr>
+				</thead>
+			</table>
+		</div>
+		{{>cardFull}} {{>cardUsed}} {{>cardUsed}}
+	</div>
 
 </template>
 
 <template name="cardFull">
-<div class = "budget">
-    <table>
-        <thead>
-            <tr>
-                <th>Bills</th>
-            </tr>
-        </thead>
-    </table>
-    <div class = "circle-total">
-        <div class = "circle"><h5>100</h5></div>
-    </div>
-    <div class = "circle-left">
-        <div class = "circle"><h5>100</h5> </div>
-    </div>
-    <hr />
-</div>
+	<div class="budget">
+		<table>
+			<thead>
+				<tr>
+					<th>Bills</th>
+				</tr>
+			</thead>
+		</table>
+		<div class="circle-total">
+			<div class="circle">
+				<h5>100</h5>
+			</div>
+		</div>
+		<div class="circle-left">
+			<div class="circle">
+				<h5>100</h5>
+			</div>
+		</div>
+		<hr />
+	</div>
 </template>
 
 <template name="cardUsed">
-<div class = "budget">
-    <table>
-        <thead>
-            <tr>
-                <th>Food</th>
-            </tr>
-        </thead>
-    </table>
-    <div class = "circle-total">
-        <div class = "circle"><h5>100</h5></div>
-    </div>
-    <div style = "right:calc(40% + 3.5em)" class = "circle-left">
-        <div class = "circle"><h5>25</h5> </div>
-    </div>
-    <hr style = "width:25%; border-color:red" /> 
-</div>
+	<div class="budget">
+		<table>
+			<thead>
+				<tr>
+					<th>Food</th>
+				</tr>
+			</thead>
+		</table>
+		<div class="circle-total">
+			<div class="circle">
+				<h5>100</h5>
+			</div>
+		</div>
+		<div style="right:calc(40% + 3.5em)" class="circle-left">
+			<div class="circle">
+				<h5>25</h5>
+			</div>
+		</div>
+		<hr style="width:25%; border-color:red" />
+	</div>
 </template>

@@ -7099,8 +7099,8 @@ html {
 
 /* line 9, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
 body {
-  background-image: -webkit-radial-gradient(0 0,  ellipse, rgba(241, 228, 180, 0.85), rgba(238, 211, 164, 0.85), rgba(172, 151, 116, 0.85)), url(/images/squairy_light_@2X.png);
-  background-image: radial-gradient(  ellipse at 0 0, rgba(241, 228, 180, 0.85), rgba(238, 211, 164, 0.85), rgba(172, 151, 116, 0.85)), url(/images/squairy_light_@2X.png); }
+  background-image: -webkit-radial-gradient(0 0,  ellipse, rgba(241, 228, 180, 0.88), rgba(238, 211, 164, 0.88), rgba(172, 151, 116, 0.88)), url(/images/bgnoise_lg_dark.png);
+  background-image: radial-gradient(  ellipse at 0 0, rgba(241, 228, 180, 0.88), rgba(238, 211, 164, 0.88), rgba(172, 151, 116, 0.88)), url(/images/bgnoise_lg_dark.png); }
 
 /* line 18, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
 table {
@@ -7121,25 +7121,25 @@ table {
 .sidenav, .content .box, .content .budget {
   border-radius: 1px;
   background-color: white;
+  box-shadow: 0px 0px 5px -2px black;
   color: grey; }
 
-/* line 50, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 51, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
 .sidenav {
   margin: 0;
   padding: 0.4em 0;
-  box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.5);
   font-size: 0.8125em; }
-  /* line 58, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 57, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav ul, .sidenav li, .sidenav a {
     font-size: inherit; }
-  /* line 62, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 61, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav li {
     list-style: none; }
-    /* line 64, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 63, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .sidenav li.active > a {
       border-left: 0.3em solid #76D3FF;
       background-color: #F5F5F5; }
-  /* line 70, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 69, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav a {
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
@@ -7148,42 +7148,42 @@ table {
     padding: 0.7em 1.7em;
     color: inherit;
     line-height: 1.5em; }
-    /* line 76, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 75, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .sidenav a:hover {
       background-color: #F5F5F5; }
-    /* line 79, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 78, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .sidenav a i.fa {
       float: right;
       font-size: 1.2em;
       line-height: inherit; }
-  /* line 88, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 87, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav .subnav {
     margin-left: 0.3em; }
-    /* line 90, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 89, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .sidenav .subnav a {
       padding: 0.4em;
       padding-left: 2em; }
-      /* line 93, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+      /* line 92, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
       .sidenav .subnav a:before {
         padding-right: 0.5em;
         vertical-align: top;
         font-size: 1.4em; }
 
-/* line 104, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 103, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
 .content {
   padding: 1em 0;
   color: grey;
   font-size: 0.8125em; }
-  /* line 109, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 108, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .content .box {
     padding: 1.4em; }
-  /* line 114, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 113, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .content .budget {
     display: inline-block;
     margin-top: 1em;
     padding: 1.4em;
     width: 100%; }
-    /* line 121, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 120, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .content .budget .circle-left {
       position: absolute;
       right: 2.9em;
@@ -7192,10 +7192,10 @@ table {
       width: 3.5em;
       height: 3.5em;
       background-color: white; }
-      /* line 129, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+      /* line 128, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
       .content .budget .circle-left h5 {
         color: red; }
-    /* line 133, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 132, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .content .budget .circle-total {
       position: absolute;
       margin-top: 0.75em;
@@ -7203,41 +7203,41 @@ table {
       width: 3.5em;
       height: 3.5em;
       background-color: white; }
-      /* line 140, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+      /* line 139, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
       .content .budget .circle-total h5 {
         color: green; }
-    /* line 145, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 144, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .content .budget .circle {
       width: 3em;
       height: 3em;
       border: 1px solid lightgrey;
       border-radius: 1.5em;
       line-height: 3em; }
-    /* line 154, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 153, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .content .budget h5 {
       text-align: center;
       font-weight: bold;
       font-size: 1.2em;
       line-height: 2em; }
-    /* line 160, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 159, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .content .budget hr {
       border-width: 1em;
       border-color: green; }
 
 @media only screen and (min-width: 700px) {
-  /* line 168, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 167, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .top-bar {
     padding: 15px 0;
     height: auto; }
-    /* line 171, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 170, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
     .top-bar .name h1 a {
       padding-left: 60px; }
-  /* line 175, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 174, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .sidenav {
     position: absolute;
     margin-left: 1.5em;
     width: 14em; }
-  /* line 180, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 179, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
   .content {
     margin-left: 15.5em;
     padding: 0 1.5em; } }
