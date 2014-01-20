@@ -12,7 +12,6 @@ body {
 }
 
 .top-bar {
-	margin-top: 15px;
 	background: none;
 	.name h1 a {
 		padding-left: 60px;
@@ -102,7 +101,7 @@ table {
 	}
 
 	.content {
-		padding: 5% 0;
+		padding: 2em 0;
 		color: $text-color;
 		font-size: $base-font-size;
 
@@ -165,7 +164,10 @@ table {
                     }
 	}
 
-	@media only screen and (min-width: 500px) {
+	@media only screen and (min-width: 700px) {
+		.top-bar {
+			margin-top: 15px;
+		}
 		.sidenav {
 			position: absolute;
 			margin-top: $sidenav-margin;
