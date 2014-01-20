@@ -7089,60 +7089,60 @@ th.hide-for-touch {
 .fa-plus-square-o:before {
   content: "\f196"; }
 
-/* line 1, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 1, /home/jasperlu/personal-finance/client/stylesheets/general/general */
 * {
   box-sizing: border-box; }
 
-/* line 5, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 5, /home/jasperlu/personal-finance/client/stylesheets/general/general */
 html {
   min-height: 100%; }
 
-/* line 9, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 9, /home/jasperlu/personal-finance/client/stylesheets/general/general */
 body {
   background-color: #383838; }
 
-/* line 14, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 14, /home/jasperlu/personal-finance/client/stylesheets/general/general */
 .top-bar {
   margin-top: 15px;
   background: none; }
-  /* line 17, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 17, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   .top-bar .name h1 a {
     padding-left: 60px; }
 
-/* line 22, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 22, /home/jasperlu/personal-finance/client/stylesheets/general/general */
 table {
   width: 100%; }
-  /* line 25, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 25, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   table thead {
     border-bottom: 2px solid #DDD; }
-  /* line 29, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 29, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   table th {
     padding: 0.7em;
     font-weight: 300; }
 
-/* line 44, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
-.sidenav, .content .box {
+/* line 44, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+.sidenav, .content .box, .content .budget {
   border-radius: 1px;
   background-color: white;
   color: grey; }
 
-/* line 50, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 50, /home/jasperlu/personal-finance/client/stylesheets/general/general */
 .sidenav {
   margin: 0;
   padding: 0.4em 0;
   box-shadow: 1px 1px 6px -3px rgba(0, 0, 0, 0.5);
   font-size: 0.8125em; }
-  /* line 58, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 58, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   .sidenav ul, .sidenav li, .sidenav a {
     font-size: inherit; }
-  /* line 62, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 62, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   .sidenav li {
     list-style: none; }
-    /* line 64, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 64, /home/jasperlu/personal-finance/client/stylesheets/general/general */
     .sidenav li.active > a {
       border-left: 0.3em solid #76D3FF;
       background-color: #F5F5F5; }
-  /* line 70, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 70, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   .sidenav a {
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
@@ -7151,44 +7151,90 @@ table {
     padding: 0.7em 1.7em;
     color: inherit;
     line-height: 1.5em; }
-    /* line 76, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 76, /home/jasperlu/personal-finance/client/stylesheets/general/general */
     .sidenav a:hover {
       background-color: #F5F5F5; }
-    /* line 79, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 79, /home/jasperlu/personal-finance/client/stylesheets/general/general */
     .sidenav a i.fa {
       float: right;
       font-size: 1.2em;
       line-height: inherit; }
-  /* line 88, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 88, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   .sidenav .subnav {
     margin-left: 0.3em; }
-    /* line 90, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+    /* line 90, /home/jasperlu/personal-finance/client/stylesheets/general/general */
     .sidenav .subnav a {
       padding: 0.4em;
       padding-left: 2em; }
-      /* line 93, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+      /* line 93, /home/jasperlu/personal-finance/client/stylesheets/general/general */
       .sidenav .subnav a:before {
         padding-right: 0.5em;
         vertical-align: top;
         font-size: 1.4em; }
 
-/* line 104, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+/* line 104, /home/jasperlu/personal-finance/client/stylesheets/general/general */
 .content {
   padding: 5% 0;
   color: grey;
   font-size: 0.8125em; }
-  /* line 109, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 109, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   .content .box {
     padding: 1.4em; }
+  /* line 115, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+  .content .budget {
+    margin-top: 1em;
+    padding: 1.4em;
+    width: 100%;
+    display: inline-block; }
+    /* line 122, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+    .content .budget .circle-left {
+      width: 3.5em;
+      height: 3.5em;
+      padding: 0.25em;
+      position: absolute;
+      background-color: white;
+      right: 2.9em;
+      margin-top: 0.75em; }
+      /* line 130, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+      .content .budget .circle-left h5 {
+        color: red; }
+    /* line 134, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+    .content .budget .circle-total {
+      height: 3.5em;
+      width: 3.5em;
+      padding: 0.25em;
+      position: absolute;
+      background-color: white;
+      margin-top: 0.75em; }
+      /* line 141, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+      .content .budget .circle-total h5 {
+        color: green; }
+    /* line 146, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+    .content .budget .circle {
+      width: 3em;
+      height: 3em;
+      border-radius: 1.5em;
+      border: 1px solid lightgrey;
+      line-height: 3em; }
+    /* line 155, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+    .content .budget h5 {
+      font-size: 1.2em;
+      line-height: 2em;
+      text-align: center;
+      font-weight: bold; }
+    /* line 161, /home/jasperlu/personal-finance/client/stylesheets/general/general */
+    .content .budget hr {
+      border-width: 1em;
+      border-color: green; }
 
 @media only screen and (min-width: 500px) {
-  /* line 116, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 169, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   .sidenav {
     position: absolute;
     margin-top: 1.5em;
     margin-left: 1.5em;
     width: 14em; }
-  /* line 122, /Users/steve/Desktop/code/moneyuse/client/stylesheets/general/general */
+  /* line 175, /home/jasperlu/personal-finance/client/stylesheets/general/general */
   .content {
     margin-left: 15.5em;
     padding: 1.5em; } }

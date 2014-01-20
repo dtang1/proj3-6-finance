@@ -110,6 +110,59 @@ table {
 			@extend %box;
 			padding: 1.4em;
 		}
+                
+
+                    .budget {
+		        @extend %box;
+                        margin-top:1em;
+			padding: 1.4em;
+                        width:100%;
+                        display:inline-block;
+
+                        .circle-left {
+                            width:3.5em;
+                            height:3.5em;
+                            padding:.25em;
+                            position:absolute;
+                            background-color:white;
+                            right:2.9em;
+                            margin-top:.75em;
+                            h5 {
+                                color:red;
+                            }
+                        }
+                        .circle-total {
+                            height:3.5em;
+                            width:3.5em;
+                            padding:.25em;
+                            position:absolute;
+                            background-color:white;
+                            margin-top:.75em;
+                            h5 {
+                                color:green;
+                            }
+                        }
+
+                        .circle {
+                            width:3em;
+                            height:3em;
+                            border-radius:1.5em;
+                            border:1px solid lightgrey;
+
+                            line-height:3em;
+                        }
+
+                        h5 {
+                            font-size:1.2em;
+                            line-height:2em;
+                            text-align:center;
+                            font-weight:bold;
+                        }
+                        hr {
+                            border-width:1em;
+                            border-color:green;
+                        }
+                    }
 	}
 
 	@media only screen and (min-width: 500px) {
