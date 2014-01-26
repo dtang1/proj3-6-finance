@@ -1,0 +1,21 @@
+Accounts.loginServiceConfiguration.remove({
+    service:"github"
+    });
+    
+Accounts.loginServiceConfiguration.remove({
+    service: "google"
+});
+
+Accounts.loginServiceConfiguration.insert({
+    service:"github",
+    clientId:"e7edba365fb5d439ae18",
+    secret:"73dd43c033c6ba9bbd5c9dccf679def47dac96d1",
+    
+});
+
+Accounts.loginServiceConfiguration.insert({
+        service: "google",
+        appId: "541914321.apps.googleusercontent.com",
+        secret: "PKCLBjlMyMrLge-YGbrI_U8i"
+});
+
