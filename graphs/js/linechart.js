@@ -88,7 +88,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 			var dot = r.circle(x, y, 4).attr({fill: "#333", stroke: color, "stroke-width": 2});
 			blanket.push(r.rect(leftgutter + X * (i), height*0.98-bottomgutter-Y*(data[i]), X, height*0.05).attr({stroke: "none", fill: "#fff", opacity: 0}));
 			var rect = blanket[blanket.length - 1];
-			(function (x, y, data, lbl, dot) {
+			(function (x, y, data, lbl, dot, name) {
 				var timer, i = 0;
 				rect.hover(function () {
 					clearTimeout(leave_timer);
@@ -102,7 +102,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 					lx = label[0].transform()[0][1] + ppp.dx;
 					ly = label[0].transform()[0][2] + ppp.dy;
 					frame.show().stop().animate(anim);
-					label[0].attr({text: "$"+data + "" + (data == 1 ? "" : "")}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
+					label[0].attr({text: name+": $"+data + "" + (data == 1 ? "" : "")}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
 					label[1].attr({text: lbl + " September 2008"}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
 					dot.attr("r", 6);
 					is_label_visible = true;
@@ -115,7 +115,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 						is_label_visible = false;
 					}, 1);
 				});
-			})(x, y, data[i], labels[i], dot);
+			})(x, y, data[i], labels[i], dot, line.name);
 		}
 		p = p.concat([x, y, x, y]);
 		bgpp = bgpp.concat([x, y, x, y, "L", x, height - bottomgutter, "z"]);
@@ -192,7 +192,7 @@ window.onload = function () {
         var dot = r.circle(x, y, 4).attr({fill: "#333", stroke: color, "stroke-width": 2});
         blanket.push(r.rect(leftgutter + X * i, 0, X, height - bottomgutter).attr({stroke: "none", fill: "#fff", opacity: 0}));
         var rect = blanket[blanket.length - 1];
-        (function (x, y, data, lbl, dot) {
+        (function (x, y, data, lbl, dot, name) {
             var timer, i = 0;
             rect.hover(function () {
                 clearTimeout(leave_timer);
@@ -221,7 +221,7 @@ window.onload = function () {
                     is_label_visible = false;
                 }, 1);
             });
-        })(x, y, data[i], labels[i], dot);
+        })(x, y, data[i], labels[i], dot, line.name);
     }
     p = p.concat([x, y, x, y]);
     bgpp = bgpp.concat([x, y, x, y, "L", x, height - bottomgutter, "z"]);
