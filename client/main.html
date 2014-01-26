@@ -64,24 +64,30 @@
 		</li>
 	</ul>
 	<div class="content">
-		<div class="box">
-			<table>
-				<thead>
-					<tr>
-						<th>Date</th>
-						<th>Info</th>
-						<th>Cost</th>
-					</tr>
-				</thead>
-			</table>
-		</div>
-		{{>cardFull}} {{>cardUsed}} {{>cardUsed}}
+		{{>cardExpenses}}
+		{{>cardFull}}
+		{{>cardUsed}}
+		{{>cardUsed}}
+		{{>cardTest}}
 	</div>
+</template>
 
+<template name="cardExpenses">
+	<div class="card-expenses">
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Info</th>
+					<th>Cost</th>
+				</tr>
+			</thead>
+		</table>
+	</div>
 </template>
 
 <template name="cardFull">
-	<div class="budget">
+	<div class="card-budget">
 		<table>
 			<thead>
 				<tr>
@@ -104,7 +110,7 @@
 </template>
 
 <template name="cardUsed">
-	<div class="budget">
+	<div class="card-budget">
 		<table>
 			<thead>
 				<tr>
@@ -123,5 +129,11 @@
 			</div>
 		</div>
 		<hr style="width:25%; border-color:red" />
+	</div>
+</template>
+
+<template name="cardTest">
+	<div class="card">
+		<progress value="10" max="100"></progress>
 	</div>
 </template>
