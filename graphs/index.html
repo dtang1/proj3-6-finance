@@ -15,14 +15,16 @@
 		<script>
 			$(function () {
 				var values = [500,600,2500,200,3100],
-					labels = ["Food","Rent","Strippers","Shopping","Porn"];
+					labels = ["Food","Rent","Strippers","Shopping","Porn"],
+					colors = ["#000","#444","#888","#bbb","#ddd"];
 				var svg = graph({
 					initialWidth : 300, // width
 					graph : "pie", // graph type
 					holder : "holder" // container ID
 				},{
 					values : values,
-					labels : labels
+					labels : labels,
+					colors : colors
 				});
 				svg.rect(0,0,svg.width,svg.height,10).attr("stroke","#00f");
 			});
