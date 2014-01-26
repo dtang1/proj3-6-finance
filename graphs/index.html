@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
+		<meta name="description" content="website description" />
+		<meta name="keywords" content="HTML Javascript CSS JQuery Web Technology Website" />
+		<title></title>
+		<link rel="stylesheet" type="text/css" href="css/style.css" />
+		<script src="js/vendor/jmin.js"></script>
+		<script src="js/vendor/raphael-min.js"></script>
+		<script src="graph.js"></script>
+		<script src="pie.js"></script>
+	</head>
+	<body>
+    	<div id="holder"></div>
+		<script>
+			$(function () {
+				var values = [500,600,2500,200,3100],
+					labels = ["Food","Rent","Strippers","Shopping","Porn"];
+				var svg = graph({
+					initialWidth : 300, // width
+					graph : "pie", // graph type
+					holder : "holder" // container ID
+				},{
+					values : values,
+					labels : labels
+				});
+				svg.rect(0,0,svg.width,svg.height,10).attr("stroke","#00f");
+			});
+		</script>
+		
+		
+		
+	</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
