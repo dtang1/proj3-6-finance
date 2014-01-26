@@ -1,7 +1,7 @@
+$bg-color: #e9e9e9;
 @mixin home(
 	$base-font-size: 14em/16,
 	$text-color: gray,
-	$bg-color: white, //rgba(51, 51, 51, 0.4)
 	$hover-bg-color: #F5F5F5, // rgba(51, 51, 51, 0.3)
 	$active-border-color: lighten($green, 5%) // earthier color: #C9E000
 ) {
