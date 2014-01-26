@@ -1,0 +1,48 @@
+@mixin layout(
+	$sidenav-width: 14em,
+	$sidenav-margin: 1.5em,
+	$breakpoint: "only screen and (min-width: 700px)"
+) {
+	.content {
+		@include row;
+	}
+
+	%card {
+		@include span-columns(12);
+	}
+
+	@media #{$breakpoint} {
+		.card-expenses {
+			@include span-columns(6);
+		}
+		.card-budget-test {
+			@include span-columns(6);
+			@include omega;
+		}
+		.card-budget {
+			@include span-columns(12);
+		}
+	}
+
+	@media #{$breakpoint} {
+		.top-bar {
+			padding: 15px 0;
+			height: auto;
+			.name h1 a {
+				padding-left: 60px;
+			}
+		}
+
+		.sidenav {
+			position: absolute;
+			margin-left: $sidenav-margin;
+			width: 14em;
+		}
+
+		.content {
+			margin-left: $sidenav-width + $sidenav-margin;
+			padding: 0 1.4%;
+		}
+	}
+}
+@include layout;
