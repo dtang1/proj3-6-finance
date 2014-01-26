@@ -51,6 +51,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 	var Y = (height - bottomgutter - topgutter) / max;
 	svg.drawGrid(leftgutter + X * .5 + .5, topgutter + .5, width - leftgutter - X, height - topgutter - bottomgutter, 10, 10, "#000");
 	
+	var blankets = [];
 	function drawLine(_j) {
 		var line = dat.lines[_j],
 			data = line.values;
@@ -126,10 +127,10 @@ Raphael.fn.lineChart = function(opts, dat) {
 		label[0].toFront();
 		label[1].toFront();
 		blanket.toFront();
-		
+		blankets.push(blanket);
 	}
 	for(_j in dat.lines) drawLine(_j);
-	
+	for(i in blankets) blankets[i].toFront();
 }
 
 window.onload = function () {
