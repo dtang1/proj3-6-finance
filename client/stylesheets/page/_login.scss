@@ -1,0 +1,26 @@
+.login {
+    position:fixed;
+    width:450px;
+    height:300px;
+    background-color: $bg-color;
+    top:50%;
+    margin-top:-150px;
+    left:50%;
+    margin-left:-225px;
+    h1 {
+        font-size:4em;
+        text-align:center;
+    }
+    #google-login {
+        background:url('/images/google-base.png') center top no-repeat;
+        height:100px;
+        width:100%;
+        cursor:pointer;
+        &:hover {
+            background:url('/images/google-hover.png') center top no-repeat;
+        }
+        &:active {
+            background:url('/images/google-press.png') center top no-repeat;
+        }
+    }
+}
