@@ -12,3 +12,6 @@ body * {
 .t9 { -webkit-transition: all 0.9s ease-out; -moz-transition: all 0.9s ease-out; -o-transition: all 0.9s ease-out; transition: all 0.9s ease-out; }
 
 
+div {
+	display:inline-block;
+}
