@@ -39,7 +39,7 @@
 		margin-top: 1.61735%;
 		padding: 1em;
 		border-radius: 1px;
-		background-color: $bg-color;
+		background-color: $card-bg-color;
 		box-shadow: 0px 0px 5px -2px black;
 		color: $text-color;
 	}
@@ -139,6 +139,21 @@
 
 	.card-expenses {
 		@extend %card;
+
+		.add-transaction {
+			@include row;
+		}
+
+		.button {
+			&.expense {
+				@include span-columns(6);
+				background-color: $red;
+			}
+			&.income {
+				@include span-columns(6);
+				background-color: $green;
+			}
+		}
 	}
 
 	.card-budget-test {
