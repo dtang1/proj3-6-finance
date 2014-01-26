@@ -88,7 +88,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 			var dot = r.circle(x, y, 4).attr({fill: "#333", stroke: color, "stroke-width": 2});
 			blanket.push(r.rect(leftgutter + X * (i), height*0.98-bottomgutter-Y*(data[i]), X, height*0.05).attr({stroke: "none", fill: "#fff", opacity: 0}));
 			var rect = blanket[blanket.length - 1];
-			(function (x, y, data, lbl, dot, name) {
+			(function (x, y, data, lbl, dot, name, l1, l2) {
 				var timer, i = 0;
 				rect.hover(function () {
 					clearTimeout(leave_timer);
@@ -102,8 +102,9 @@ Raphael.fn.lineChart = function(opts, dat) {
 					lx = label[0].transform()[0][1] + ppp.dx;
 					ly = label[0].transform()[0][2] + ppp.dy;
 					frame.show().stop().animate(anim);
-					label[0].attr({text: name+": $"+data + "" + (data == 1 ? "" : "")}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
-					label[1].attr({text: lbl + " September 2008"}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
+					function doText(line) {return line.replace("{name}",name).replace("{label}",lbl).replace("{value}",data)}
+					label[0].attr({text: doText(l1)}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
+					label[1].attr({text: doText(l2)}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
 					dot.attr("r", 6);
 					is_label_visible = true;
 				}, function () {
@@ -115,7 +116,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 						is_label_visible = false;
 					}, 1);
 				});
-			})(x, y, data[i], labels[i], dot, line.name);
+			})(x, y, data[i], labels[i], dot, line.name, opts.line1, opts.line2);
 		}
 		p = p.concat([x, y, x, y]);
 		bgpp = bgpp.concat([x, y, x, y, "L", x, height - bottomgutter, "z"]);
