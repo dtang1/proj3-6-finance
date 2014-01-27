@@ -11,9 +11,28 @@
 		@include span-columns(12);
 	}
 
+	.card-expenses .button{
+		&.expense {
+			@include span-columns(6 of 12);
+			@include omega;
+		}
+		&.income {
+			@include span-columns(6 of 12);
+		}
+	}
+
 	@media #{$breakpoint} {
 		.card-expenses {
 			@include span-columns(6);
+			.button {
+				&.expense {
+					@include span-columns(3 of 6);
+					@include omega;
+				}
+				&.income {
+					@include span-columns(3 of 6);
+				}
+			}
 		}
 		.card-budget-test {
 			@include span-columns(6);

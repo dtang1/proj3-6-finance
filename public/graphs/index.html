@@ -7,28 +7,67 @@
 		<link rel="stylesheet" type="text/css" href="css/style.css" />
 		<script src="js/vendor/jmin.js"></script>
 		<script src="js/vendor/raphael-min.js"></script>
-		<script src="graph.js"></script>
-		<script src="pie.js"></script>
+		<script src="js/graph.js"></script>
+		<script src="js/pie.js"></script>
+		<script src="js/linechart.js"></script>
+		<script src="js/popup.js"></script>
 	</head>
 	<body>
-    	<div id="holder"></div>
+    	<div id="pieholder"></div>
+    	<div id="linechartholder"></div>
 		<script>
 			$(function () {
-				var values = [500,600,2500,200,3100],
-					labels = ["Food","Rent","Strippers","Shopping","Porn"],
-					colors = ["#000","#444","#888","#bbb","#ddd"];
-				var svg = graph({
-					initialWidth : 300, // width
-					graph : "pie", // graph type
-					holder : "holder" // container ID
-				},{
-					values : values,
-					labels : labels,
-					colors : colors
-				});
-				svg.rect(0,0,svg.width,svg.height,10).attr("stroke","#00f");
+				(function() {
+					var values = [500,600,2500,200,3100],
+						labels = ["Food","Rent","Strippers","Shopping","Porn"],
+						colors = ["#000","#444","#888","#bbb","#ddd"];
+					var svg = graph({
+						width : 300, // width
+						graph : "pie", // graph type
+						holder : "pieholder" // container ID
+					},{
+						values : values,
+						labels : labels,
+						colors : colors
+					});
+					svg.rect(0,0,svg.width,svg.height,10).attr("stroke","#00f");
+				}());
+				
+				(function() {
+					var labels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
+						lines = [
+							{
+								color : "#f00",
+								name : "Porn",
+								values : [400,300,200,600,400,900,400,300,200,600,400,900,400,300,200,600,400,900,400,300,200,600,400,900,400,300,200,600,400,900,400,300,200,600,400,900]
+							},
+							{
+								color : "#00f",
+								name : "More Porn",
+								values : [50,40,30,20,60,40,40,30,20,60,40,40,30,20,60,40,40,30,20,60,40,40,830,420,760,40,40,30,20,60,40,40,30,20,60,40,40,30,20,60,40]
+							}
+						];
+					var svg = graph({
+						width : 700, // width
+						height : 400,
+						graph : "linechart", // graph type
+						holder : "linechartholder", // container ID
+						labelText : {font: '12px Helvetica, Arial', fill: "#000"},
+						line1 : "{name}: ${value}",
+						line2 : "September {label}, 2013"
+					},{
+						labels : labels,
+						lines : lines
+					});
+					svg.rect(0,0,svg.width,svg.height,10).attr("stroke","#00f");
+				}());
+				
+				
 			});
 		</script>
+		
+		
+		
 	</body>
 </html>
 

@@ -74,6 +74,8 @@
 
 <template name="cardExpenses">
 	<div class="card-expenses">
+		<div class="button tiny income"><i class="fa fa-plus"></i>Income</div>
+		<div class="button tiny expense"><i class="fa fa-minus"></i>Expense</div>
 		<table>
 			<thead>
 				<tr>
@@ -134,6 +136,7 @@
 
 <template name="cardBudget">
 	<div class="card-budget-test">
+		<h4>Budget</h4>
 		<div class="budget-item">
 			<div class="progress-label">
 				<span class="name">
@@ -158,6 +161,19 @@
 			</div>
 			<div class="progress round">
 				<span class="meter" style="width: 50%"></span>
+			</div>
+		</div>
+		<div class="budget-item">
+			<div class="progress-label">
+				<span class="name">
+					Electronics
+				</span>
+				<span class="budget">
+					$0/$50000
+				</span>
+			</div>
+			<div class="progress round">
+				<span class="meter" style="width: 0%"></span>
 			</div>
 		</div>
 	</div>

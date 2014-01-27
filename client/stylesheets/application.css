@@ -7117,6 +7117,13 @@ table {
 .fa, .sidenav ul.subnav a:before {
   text-align: center; }
 
+/* line 36, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
+.button {
+  padding: 0.8em 1.4em; }
+  /* line 38, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
+  .button .fa, .button .sidenav ul.subnav a:before {
+    margin-right: 0.5em; }
+
 /* line 1, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .progress {
   margin: 0;
@@ -7151,7 +7158,7 @@ table {
   margin-top: 1.61735%;
   padding: 1em;
   border-radius: 1px;
-  background-color: #e9e9e9;
+  background-color: #FAFAFA;
   box-shadow: 0px 0px 5px -2px black;
   color: grey; }
 
@@ -7243,9 +7250,15 @@ table {
     margin-bottom: 0; }
 
 
+/* line 143, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+.card-expenses .button.expense {
+  background-color: #DA453E; }
+/* line 146, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+.card-expenses .button.income {
+  background-color: #60B602; }
 
 
-/* line 151, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 159, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle-left {
   position: absolute;
   right: 2.9em;
@@ -7254,10 +7267,10 @@ table {
   width: 3.5em;
   height: 3.5em;
   background-color: white; }
-  /* line 159, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+  /* line 167, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .card-budget .circle-left h5 {
     color: red; }
-/* line 163, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 171, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle-total {
   position: absolute;
   margin-top: 0.75em;
@@ -7265,23 +7278,23 @@ table {
   width: 3.5em;
   height: 3.5em;
   background-color: white; }
-  /* line 170, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+  /* line 178, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .card-budget .circle-total h5 {
     color: green; }
-/* line 175, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 183, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle {
   width: 3em;
   height: 3em;
   border: 1px solid lightgrey;
   border-radius: 1.5em;
   line-height: 3em; }
-/* line 184, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 192, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget h5 {
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;
   line-height: 2em; }
-/* line 190, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 198, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget hr {
   border-width: 1em;
   border-color: green; }
@@ -7291,7 +7304,7 @@ table {
   position: fixed;
   width: 450px;
   height: 300px;
-  background-color: #e9e9e9;
+  background-color: #FAFAFA;
   top: 50%;
   margin-top: -150px;
   left: 50%;
@@ -7346,8 +7359,28 @@ table {
   %card:last-child {
     margin-right: 0; }
 
+/* line 15, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+.card-expenses .button.expense {
+  float: left;
+  display: block;
+  margin-right: 1.61735%;
+  width: 49.19133%;
+  margin-right: 0; }
+  /* line 40, ../packages/neat-scss/grid/span-columns */
+  .card-expenses .button.expense:last-child {
+    margin-right: 0; }
+/* line 19, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+.card-expenses .button.income {
+  float: left;
+  display: block;
+  margin-right: 1.61735%;
+  width: 49.19133%; }
+  /* line 40, ../packages/neat-scss/grid/span-columns */
+  .card-expenses .button.income:last-child {
+    margin-right: 0; }
+
 @media only screen and (min-width: 700px) {
-  /* line 15, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 25, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .card-expenses {
     float: left;
     display: block;
@@ -7356,7 +7389,26 @@ table {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .card-expenses:last-child {
       margin-right: 0; }
-  /* line 18, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+    /* line 28, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+    .card-expenses .button.expense {
+      float: left;
+      display: block;
+      margin-right: 3.28787%;
+      width: 48.35606%;
+      margin-right: 0; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .card-expenses .button.expense:last-child {
+        margin-right: 0; }
+    /* line 32, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+    .card-expenses .button.income {
+      float: left;
+      display: block;
+      margin-right: 3.28787%;
+      width: 48.35606%; }
+      /* line 40, ../packages/neat-scss/grid/span-columns */
+      .card-expenses .button.income:last-child {
+        margin-right: 0; }
+  /* line 37, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .card-budget-test {
     float: left;
     display: block;
@@ -7366,7 +7418,7 @@ table {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .card-budget-test:last-child {
       margin-right: 0; }
-  /* line 22, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 41, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .card-budget {
     float: left;
     display: block;
@@ -7377,19 +7429,19 @@ table {
       margin-right: 0; } }
 
 @media only screen and (min-width: 700px) {
-  /* line 28, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 47, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .top-bar {
     padding: 15px 0;
     height: auto; }
-    /* line 31, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+    /* line 50, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
     .top-bar .name h1 a {
       padding-left: 60px; }
-  /* line 36, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 55, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .sidenav {
     position: absolute;
     margin-left: 1.5em;
     width: 14em; }
-  /* line 42, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 61, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .content {
     margin-left: 15.5em;
     padding: 0 1.4%; } }
