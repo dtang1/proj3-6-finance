@@ -1,13 +1,16 @@
-Raphael.fn.donutChart = function (cx, cy, r, values, labels, colors, stroke) {
+Raphael.fn.donutChart = function (cx, cy, r, r2, values, labels, colors, stroke) {
+	//values = [values[0],values[1]];
     var paper = this,
         rad = Math.PI / 180,
         chart = this.set();
     function sector(cx, cy, r, startAngle, endAngle, params) {
-        var x1 = cx + r * Math.cos(-startAngle * rad),
-            x2 = cx + r * Math.cos(-endAngle * rad),
-            y1 = cy + r * Math.sin(-startAngle * rad),
-            y2 = cy + r * Math.sin(-endAngle * rad);
-        return paper.path(["M", cx, cy, "L", x1, y1, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2, "z"]).attr(params);
+        var x1 = cx + r * Math.cos(-startAngle * rad), y1 = cy + r * Math.sin(-startAngle * rad),
+            x2 = cx + r * Math.cos(-endAngle * rad), y2 = cy + r * Math.sin(-endAngle * rad);
+        var x3 = cx + r2 * Math.cos(-startAngle * rad), y3 = cy + r2 * Math.sin(-startAngle * rad),
+            x4 = cx + r2 * Math.cos(-endAngle * rad), y4 = cy + r2 * Math.sin(-endAngle * rad);
+        //return paper.path(["M", cx, cy, "L", x1, y1, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2, "z"]).attr(params);
+        return paper.path(["M", x1, y1, "A", r, r, 0, +(endAngle - startAngle > 180), 0, x2, y2,
+						   "L", x4, y4, "A", r2, r2, 0, +(startAngle - endAngle > 180), 1, x3, y3, "z"]).attr(params);
     }
     var angle = 0,
         total = 0,
@@ -24,10 +27,10 @@ Raphael.fn.donutChart = function (cx, cy, r, values, labels, colors, stroke) {
                 p = sector(cx, cy, r, angle, angle + angleplus, {fill: "90-" + bcolor + "-" + color, stroke: stroke, "stroke-width": 3});
             p.mouseover(function () {
                 p.stop().animate({transform: "s1.1 1.1 " + cx + " " + cy}, ms, "<>");
-                txt.stop().animate({"font-size":paper.width/15}, ms, "<>");
+                txt.stop().animate({"font-size":paper.width/15}, ms, ">");
             }).mouseout(function () {
                 p.stop().animate({transform: ""}, ms, "<>");
-                txt.stop().animate({"font-size":paper.width/17}, ms, "<>");
+                txt.stop().animate({"font-size":paper.width/17}, ms, "<");
             });
             angle += angleplus;
             chart.push(p);

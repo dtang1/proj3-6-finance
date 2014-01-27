@@ -15,6 +15,7 @@
 	</head>
 	<body>
     	<div id="pieholder"></div>
+    	<div id="donutholder"></div>
     	<div id="linechartholder"></div>
 		<script>
 			$(function () {
@@ -26,6 +27,24 @@
 						width : 300, // width
 						graph : "pie", // graph type
 						holder : "pieholder" // container ID
+					},{
+						values : values,
+						labels : labels,
+						colors : colors
+					});
+					// this draws the border, 10 is the border radius
+					svg.rect(0,0,svg.width,svg.height,10).attr("stroke","#00f");
+				}());
+				
+				(function() {
+					var values = [500,600,2500,200,3100],
+						labels = ["Food","Rent","Strippers","Shopping","Porn"],
+						colors = ["#000","#444","#888","#bbb","#ddd"];
+					var svg = graph({
+						width : 300, // width
+						ratio : 0.3, // inner circle ratio
+						graph : "donut", // graph type
+						holder : "donutholder" // container ID
 					},{
 						values : values,
 						labels : labels,
