@@ -1,37 +1,72 @@
-.login {
-    position:fixed;
-    width:450px;
-    height:300px;
-    background-color: $card-bg-color;
-    top:50%;
-    margin-top:-150px;
-    left:50%;
-    margin-left:-225px;
-    h1 {
-        font-size:4em;
-        text-align:center;
-    }
-    #google-login, #fb-login {
-        height:74px;
-        width:374px;
-        margin:0 auto;
-        cursor:pointer;
-    }
-    #google-login {
-        background:url('/images/google-base.png') center top ;
-        &:hover {
-            background:url('/images/google-hover.png') center top ;
-        }
-        &:active {
-            background:url('/images/google-pressed.png') center top ;
-        }
-    }
-    #fb-login {
-        margin-top:30px;
-        background-size:374px;
-        background:url('/images/fb-base.png')  center no-repeat;
-        &:active {
-            background:url('/images/fb-pressed.png') center no-repeat;
-        }
-    }
+.login-wrapper {
+	height: 100%;
+	text-align: center;
+	font-size: 0;
+
+	&:before {
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		font-size: 0;
+	}
+	.login {
+		display: inline-block;
+		padding: 1.4em;
+		width: 100%;
+		background-color: $card-bg-color;
+		vertical-align: middle;
+		font-size: 16px;
+
+		h1 {
+			font-size: 4em;
+		}
+	}
+
+	@media only screen and (min-width: 450px) {
+		&:before {
+			content: '';
+		}
+		.login {
+			margin-top: 0;
+			width: 450px;
+		}
+	}
+
+	#google-login, #fb-login, #github-login {
+		@include transition(background-color 0.2s);
+		border-radius: 3px;
+		margin-bottom: 0.5em;
+		padding: 0.7em;
+		color: white;
+		font-size: 1.5em;
+		cursor: pointer;
+		&:last-child {
+			margin-bottom: 0;
+		}
+		.fa {
+			float: left;
+			width: 1em;
+		}
+	}
+
+	#google-login {
+		background-color: #d34332;
+		&:hover {
+			background-color: darken(#d34332, 5%);
+		}
+	}
+
+	#fb-login {
+		background-color: #3b5998;
+		&:hover {
+			background-color: darken(#3b5998, 5%);
+		}
+	}
+
+	#github-login {
+		background-color: #444;
+		&:hover {
+			background-color: darken(#444, 5%);
+		}
+	}
 }

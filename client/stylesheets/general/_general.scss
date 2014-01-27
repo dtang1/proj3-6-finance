@@ -6,6 +6,10 @@ html {
 	min-height: 100%;
 }
 
+body, .body {
+	height: 100%;
+}
+
 body {
 	@include background-image(
 		//radial-gradient(ellipse at 0 0, rgba(241, 228, 180, 0.85), rgba(238, 211, 164, 0.85), rgba(172, 151, 116, 0.85)), url(/images/squairy_light_@2X.png)
