@@ -139,18 +139,11 @@
 
 	.card-expenses {
 		@extend %card;
-
-		.add-transaction {
-			@include row;
-		}
-
 		.button {
 			&.expense {
-				@include span-columns(6);
 				background-color: $red;
 			}
 			&.income {
-				@include span-columns(6);
 				background-color: $green;
 			}
 		}
