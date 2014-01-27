@@ -9,6 +9,7 @@
 		<script src="js/vendor/raphael-min.js"></script>
 		<script src="js/graph.js"></script>
 		<script src="js/pie.js"></script>
+		<script src="js/donut.js"></script>
 		<script src="js/linechart.js"></script>
 		<script src="js/popup.js"></script>
 	</head>
@@ -37,14 +38,14 @@
 					var labels = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31],
 						lines = [
 							{
-								color : "#f00",
+								color : "#6a6",
 								name : "Porn",
-								values : [400,300,200,600,400,900,400,300,200,600,400,900,400,300,200,600,400,900,400,300,200,600,400,900,400,300,200,600,400,900,400,300,200,600,400,900]
+								values : [400,300,200,600,400,90,10,300,200,600,400,900,400,300,200,600,40,900,400,30,200,600,40,90,400,300,200,600,400,900,400,300,200,600,400,900]
 							},
 							{
-								color : "#00f",
+								color : "#66a",
 								name : "More Porn",
-								values : [50,40,30,20,60,40,40,30,20,60,40,40,30,20,60,40,40,30,20,60,40,40,830,420,760,40,40,30,20,60,40,40,30,20,60,40,40,30,20,60,40]
+								values : [50,40,830,320,560,400,40,30,20,60,40,40,330,20,260,440,540,30,20,60,40,40,830,420,760,40,40,30,20,60,40,40,30,20,60,40,40,30,20,60,40]
 							}
 						];
 					var svg = graph({
@@ -52,7 +53,7 @@
 						height : 400,
 						graph : "linechart", // graph type
 						holder : "linechartholder", // container ID
-						labelText : {font: '12px Helvetica, Arial', fill: "#000"},
+						labelText : {font: '12px Verdana', fill: "#333"},
 						line1 : "{name}: ${value}",
 						line2 : "September {label}, 2013"
 					},{

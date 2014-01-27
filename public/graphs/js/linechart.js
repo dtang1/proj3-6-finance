@@ -67,7 +67,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 		label.push(r.text(60, 12, "24 hits").attr(txt2));
 		label.push(r.text(60, 27, "22 September 2008").attr(txt1).attr({fill: color}));
 		label.hide();
-		var frame = r.popup(100, 100, label, "right").attr({fill: "#fff", stroke: "#666", "stroke-width": 2, "fill-opacity": .8}).hide();
+		var frame = r.popup(100, 100, label, "right").attr({fill: "#ccc", stroke: "#666", "stroke-width": 2, "fill-opacity": .8}).hide();
 		var p, bgpp;
 		for (var i = 0, ii = labels.length; i < ii; i++) {
 			var y = Math.round(height - bottomgutter - Y * data[i]),
@@ -104,8 +104,8 @@ Raphael.fn.lineChart = function(opts, dat) {
 					ly = label[0].transform()[0][2] + ppp.dy;
 					frame.show().stop().animate(anim);
 					function doText(line) {return line.replace("{name}",name).replace("{label}",lbl).replace("{value}",data)}
-					label[0].attr({text: doText(l1)}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
-					label[1].attr({text: doText(l2)}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 200 * is_label_visible*0);
+					label[0].attr({text: doText(l1)}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 0);
+					label[1].attr({text: doText(l2)}).show().stop().animateWith(frame, anim, {transform: ["t", lx, ly]}, 0);
 					dot.attr("r", 6);
 					is_label_visible = true;
 				}, function () {
@@ -123,10 +123,6 @@ Raphael.fn.lineChart = function(opts, dat) {
 		bgpp = bgpp.concat([x, y, x, y, "L", x, height - bottomgutter, "z"]);
 		path.attr({path: p});
 		bgp.attr({path: bgpp});
-		frame.toFront();
-		label[0].toFront();
-		label[1].toFront();
-		blanket.toFront();
 		blankets.push(blanket);
 		frames.push(frame,label[0],label[1]);
 	}

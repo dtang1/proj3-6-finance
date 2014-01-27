@@ -1,4 +1,4 @@
-Raphael.fn.pieChart = function (cx, cy, r, values, labels, colors, stroke) {
+Raphael.fn.donutChart = function (cx, cy, r, values, labels, colors, stroke) {
     var paper = this,
         rad = Math.PI / 180,
         chart = this.set();
@@ -23,7 +23,7 @@ Raphael.fn.pieChart = function (cx, cy, r, values, labels, colors, stroke) {
                 bcolor = colors[j], //Raphael.hsb(start, 1, 1),
                 p = sector(cx, cy, r, angle, angle + angleplus, {fill: "90-" + bcolor + "-" + color, stroke: stroke, "stroke-width": 3});
             p.mouseover(function () {
-                p.stop().animate({transform: "s1.05 1.05 " + cx + " " + cy}, ms, "<>");
+                p.stop().animate({transform: "s1.1 1.1 " + cx + " " + cy}, ms, "<>");
                 txt.stop().animate({"font-size":paper.width/15}, ms, "<>");
             }).mouseout(function () {
                 p.stop().animate({transform: ""}, ms, "<>");
