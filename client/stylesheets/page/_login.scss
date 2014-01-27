@@ -34,9 +34,9 @@
 
 	#google-login, #fb-login, #github-login {
 		@include transition(background-color 0.2s);
-		border-radius: 3px;
 		margin-bottom: 0.5em;
 		padding: 0.7em;
+		border-radius: 3px;
 		color: white;
 		font-size: 1.5em;
 		cursor: pointer;
@@ -69,4 +69,19 @@
 			background-color: darken(#444, 5%);
 		}
 	}
+}
+
+.top-bar-section {
+	ul {
+		line-height: 45px;
+		background: none;
+		padding: 0 1.4%;
+	}
+}
+
+#logout {
+	position: static;
+	background-color: white;
+	color: rgb(46, 46, 46);
+	font-weight: 600;
 }

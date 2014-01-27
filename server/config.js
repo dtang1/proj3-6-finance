@@ -34,8 +34,8 @@ if (isProdEnv()) {
 	// dev environment
 	Accounts.loginServiceConfiguration.insert({
 		service: 'github',
-		clientId: 'e7edba365fb5d439ae18',
-		secret: '73dd43c033c6ba9bbd5c9dccf679def47dac96d1'
+		clientId: '16159c6651c71bc5ce53',
+		secret: 'e635421781992ff5af0141d556e8cf78471fc1c2'
 	});
 	Accounts.loginServiceConfiguration.insert({
 		service: 'google',
@@ -56,10 +56,8 @@ Accounts.onCreateUser(function (options, user) {
 		}
 		var service = _.keys(user.services)[0];
 		var email = user.services[service].email;
-		if (!email) {
-			if (user.emails) {
-				email = user.emails.address;
-			}
+		if (!email && user.emails) {
+			email = user.emails.address;
 		}
 		if (!email) {
 			email = options.email;
@@ -82,11 +80,8 @@ Accounts.onCreateUser(function (options, user) {
 				return user;
 			} else {
 				existingUser = existingGitHubUser || existingGoogleUser || existingFacebookUser;
-				if (existingUser) {
-					if (user.emails) {
-						// user is signing in by email, we need to set it to the existing user
-						existingUser.emails = user.emails;
-					}
+				if (existingUser && user.emails) {
+					existingUser.emails = user.emails;
 				}
 			}
 		}
@@ -96,7 +91,7 @@ Accounts.onCreateUser(function (options, user) {
 			existingUser.services = { resume: { loginTokens: [] }};
 		}
 
-		// copy accross new service info
+		// copy across new service info
 		existingUser.services[service] = user.services[service];
 		existingUser.services.resume.loginTokens.push(
 			user.services.resume.loginTokens[0]
