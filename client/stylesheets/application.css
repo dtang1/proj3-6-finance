@@ -7370,19 +7370,6 @@ table {
     .login-wrapper #github-login:hover {
       background-color: #373737; }
 
-/* line 75, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
-.top-bar-section ul {
-  line-height: 45px;
-  background: none;
-  padding: 0 1.4%; }
-
-/* line 82, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
-#logout {
-  position: static;
-  background-color: white;
-  color: #2e2e2e;
-  font-weight: 600; }
-
 /* line 6, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
 .content {
   *zoom: 1;
