@@ -66,9 +66,6 @@
 	<div class="content">
 		{{>cardExpenses}}
 		{{>cardBudget}}
-		{{>cardFull}}
-		{{>cardUsed}}
-		{{>cardUsed}}
 	</div>
 </template>
 
@@ -85,52 +82,6 @@
 				</tr>
 			</thead>
 		</table>
-	</div>
-</template>
-
-<template name="cardFull">
-	<div class="card-budget">
-		<table>
-			<thead>
-				<tr>
-					<th>Bills</th>
-				</tr>
-			</thead>
-		</table>
-		<div class="circle-total">
-			<div class="circle">
-				<h5>100</h5>
-			</div>
-		</div>
-		<div class="circle-left">
-			<div class="circle">
-				<h5>100</h5>
-			</div>
-		</div>
-		<hr />
-	</div>
-</template>
-
-<template name="cardUsed">
-	<div class="card-budget">
-		<table>
-			<thead>
-				<tr>
-					<th>Food</th>
-				</tr>
-			</thead>
-		</table>
-		<div class="circle-total">
-			<div class="circle">
-				<h5>100</h5>
-			</div>
-		</div>
-		<div style="right:calc(40% + 3.5em)" class="circle-left">
-			<div class="circle">
-				<h5>25</h5>
-			</div>
-		</div>
-		<hr style="width:25%; border-color:red" />
 	</div>
 </template>
 

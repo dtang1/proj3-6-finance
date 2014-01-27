@@ -25,6 +25,7 @@
 		.card-expenses {
 			@include span-columns(6);
 			.button {
+				border-radius: 2px;
 				&.expense {
 					@include span-columns(3 of 6);
 					@include omega;
