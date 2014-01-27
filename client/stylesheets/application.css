@@ -7301,17 +7301,28 @@ table {
     font-size: 4em;
     text-align: center; }
   /* line 14, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
-  .login #google-login {
-    background: url('/images/google-base.png') center top no-repeat;
-    height: 100px;
-    width: 100%;
+  .login #google-login, .login #fb-login {
+    height: 74px;
+    width: 374px;
+    margin: 0 auto;
     cursor: pointer; }
-    /* line 19, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
-    .login #google-login:hover {
-      background: url('/images/google-hover.png') center top no-repeat; }
+  /* line 20, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
+  .login #google-login {
+    background: url('/images/google-base.png') center top; }
     /* line 22, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
+    .login #google-login:hover {
+      background: url('/images/google-hover.png') center top; }
+    /* line 25, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login #google-login:active {
-      background: url('/images/google-press.png') center top no-repeat; }
+      background: url('/images/google-pressed.png') center top; }
+  /* line 29, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
+  .login #fb-login {
+    margin-top: 30px;
+    background-size: 374px;
+    background: url('/images/fb-base.png') center no-repeat; }
+    /* line 33, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
+    .login #fb-login:active {
+      background: url('/images/fb-pressed.png') center no-repeat; }
 
 /* line 6, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
 .content {
