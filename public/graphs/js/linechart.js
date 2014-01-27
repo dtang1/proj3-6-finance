@@ -51,7 +51,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 	var Y = (height - bottomgutter - topgutter) / max;
 	svg.drawGrid(leftgutter + X * .5 + .5, topgutter + .5, width - leftgutter - X, height - topgutter - bottomgutter, 10, 10, "#000");
 	
-	var blankets = [];
+	var blankets = [], frames = [];
 	function drawLine(_j) {
 		var line = dat.lines[_j],
 			data = line.values;
@@ -67,7 +67,7 @@ Raphael.fn.lineChart = function(opts, dat) {
 		label.push(r.text(60, 12, "24 hits").attr(txt2));
 		label.push(r.text(60, 27, "22 September 2008").attr(txt1).attr({fill: color}));
 		label.hide();
-		var frame = r.popup(100, 100, label, "right").attr({fill: "#ccc", stroke: "#666", "stroke-width": 2, "fill-opacity": .7}).hide();
+		var frame = r.popup(100, 100, label, "right").attr({fill: "#fff", stroke: "#666", "stroke-width": 2, "fill-opacity": .8}).hide();
 		var p, bgpp;
 		for (var i = 0, ii = labels.length; i < ii; i++) {
 			var y = Math.round(height - bottomgutter - Y * data[i]),
@@ -128,8 +128,10 @@ Raphael.fn.lineChart = function(opts, dat) {
 		label[1].toFront();
 		blanket.toFront();
 		blankets.push(blanket);
+		frames.push(frame,label[0],label[1]);
 	}
 	for(_j in dat.lines) drawLine(_j);
+	blankets = frames.concat(blankets);
 	for(i in blankets) blankets[i].toFront();
 }
 
