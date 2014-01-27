@@ -11,6 +11,12 @@ function graph(opts, data) {
 	for(i in opts) o[i] = opts[i];
 	var width = o.width;
 	var svg = Raphael(o.holder, width, width);
+	svg.__graph = [o.graph, opts, data];
+	svg.redraw = function(width) {
+		svg.clear();
+		svg.setSize(width,width);
+		Graph[svg.__graph[0]](this, svg.__graph[1], svg.__graph[2]);
+	};
 	return Graph[o.graph](svg, opts, data);
 }
 
