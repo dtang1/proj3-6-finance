@@ -15,13 +15,11 @@ Template.login.events({
 	}
 });
 
-/*
-Template.home.events({
+Template.header.events({
 	'click #logout': function(e, tmpl) {
 		Meteor.logout(function(e) {
 			if (e) alert(e);
 			else Router.go('/');
-		})
+		});
 	}
 });
-*/
