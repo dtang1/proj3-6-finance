@@ -39,21 +39,28 @@ Accounts.onCreateUser(function(options, user) {
 		var email = getEmail(user, service);
 		var existingUser = Meteor.users.findOne({'username': email});
 
-		console.log(existingUser);
-		console.log(user);
-
 		if (!existingUser) {
 			// set email as username
 			user.username = email;
 
-			// DELETE
-			user.profile.budget = {
-				food: 1000,
-				clothing: 1000,
-				entertainment: 1000,
-				other: 1000
-			};
+			user.budgets = [
+				{
+					name: "Food",
+					limit: 1000,
+					spent: 500,
+					percent: 50
+				}
+			];
+			user.transactions = [];
 			return user;
+		}
+
+		// add empty lists
+		var models = ["budgets", "transactions", "categories"];
+		for (var model in models) {
+			if (!user[model]) {
+				user[model] = [];
+			}
 		}
 
 		// copy across new service info

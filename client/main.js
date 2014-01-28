@@ -1,1 +1,1 @@
-Meteor.subscribe('transactions');
+Meteor.subscribe('userData');
