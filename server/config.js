@@ -77,6 +77,13 @@ Meteor.startup(function() {
 
 			// even worse hackery
 			Meteor.users.remove({_id: existingUser._id}); // remove existing record
+                        //hardcode this shit
+                        existingUser.profile.budget = {
+                            food: 1000,
+                            clothing:1000,
+                            entertainment:1000,
+                            other:1000
+                        }
 			return existingUser;    		      // record is re-inserted
 		}
 	});
