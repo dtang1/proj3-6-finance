@@ -155,56 +155,8 @@
                 }
 	}
 
-	.card-budget-test {
-		@extend %card;
-	}
-
 	.card-budget {
 		@extend %card;
-
-		.circle-left {
-			position:absolute;
-			right:2.9em;
-			margin-top:.75em;
-			padding:.25em;
-			width:3.5em;
-			height:3.5em;
-			background-color:white;
-			h5 {
-				color:red;
-			}
-		}
-		.circle-total {
-			position:absolute;
-			margin-top:.75em;
-			padding:.25em;
-			width:3.5em;
-			height:3.5em;
-			background-color:white;
-			h5 {
-				color:green;
-			}
-		}
-
-		.circle {
-			width:3em;
-			height:3em;
-			border:1px solid lightgrey;
-			border-radius:1.5em;
-
-			line-height:3em;
-		}
-
-		h5 {
-			text-align:center;
-			font-weight:bold;
-			font-size:1.2em;
-			line-height:2em;
-		}
-		hr {
-			border-width:1em;
-			border-color:green;
-		}
 	}
 }
 @include home;

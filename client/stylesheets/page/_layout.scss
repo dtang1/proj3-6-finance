@@ -11,7 +11,7 @@
 		@include span-columns(12);
 	}
 
-	.card-expenses .button{
+	.card-expenses .button {
 		&.expense {
 			@include span-columns(6 of 12);
 			@include omega;
@@ -35,12 +35,9 @@
 				}
 			}
 		}
-		.card-budget-test {
+		.card-budget {
 			@include span-columns(6);
 			@include omega;
-		}
-		.card-budget {
-			@include span-columns(12);
 		}
 	}
 
