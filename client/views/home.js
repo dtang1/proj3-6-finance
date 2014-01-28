@@ -57,7 +57,7 @@ Template.cardBudget.foodSpent = function() {
 	for (var x in k)
 		if (k[x])
 			sum += k[x].value;
-	Meteor.users.update({userID:Meteor.userID()},{$set:{food:sum}});
+	Meteor.users.update({userID:Meteor.userId()},{$set:{food:sum}});
 	return sum;
 }
 Template.cardBudget.clothesSpent = function() {
@@ -69,7 +69,7 @@ Template.cardBudget.clothesSpent = function() {
 	for (var x in k)
 		if (k[x])
 			sum += k[x].value;
-	Meteor.users.update({userID:Meteor.userID()},{$set:{clothing:sum}});
+	Meteor.users.update({userID:Meteor.userId()},{$set:{clothing:sum}});
 	return sum;
 }
 Template.cardBudget.enterSpent = function() {
@@ -81,7 +81,7 @@ Template.cardBudget.enterSpent = function() {
 	for (var x in k)
 		if (k[x])
 			sum += k[x].value;
-	Meteor.users.update({userID:Meteor.userID()},{$set:{entertainment:sum}});
+	Meteor.users.update({userID:Meteor.userId()},{$set:{entertainment:sum}});
 	return sum;
 }
 Template.cardBudget.otherSpent = function() {
@@ -93,7 +93,7 @@ Template.cardBudget.otherSpent = function() {
 	for (var x in k)
 		if (k[x])
 			sum += k[x].value;
-	Meteor.users.update({userID:Meteor.userID()},{$set:{other:sum}});
+	Meteor.users.update({userID:Meteor.userId()},{$set:{other:sum}});
 	return sum;
 }
 
