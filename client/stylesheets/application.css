@@ -7089,46 +7089,46 @@ th.hide-for-touch {
 .fa-plus-square-o:before {
   content: "\f196"; }
 
-/* line 1, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+/* line 1, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
 * {
   box-sizing: border-box; }
 
-/* line 5, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+/* line 5, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
 html {
   min-height: 100%; }
 
-/* line 9, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+/* line 9, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
 body, .body {
   height: 100%; }
 
-/* line 13, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+/* line 13, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
 body {
   background-image: -webkit-radial-gradient(0 0,  ellipse, rgba(162, 138, 90, 0.88), rgba(116, 98, 56, 0.88), rgba(87, 79, 63, 0.88)), url(/images/bgnoise_lg_dark.png);
   background-image: radial-gradient(  ellipse at 0 0, rgba(162, 138, 90, 0.88), rgba(116, 98, 56, 0.88), rgba(87, 79, 63, 0.88)), url(/images/bgnoise_lg_dark.png); }
 
-/* line 23, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+/* line 23, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
 table {
   width: 100%; }
-  /* line 26, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+  /* line 26, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
   table thead {
     border-bottom: 2px solid #DDD; }
-  /* line 30, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+  /* line 30, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
   table th {
     padding: 0.7em;
     font-weight: 300; }
 
-/* line 36, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+/* line 36, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
 .fa, .sidenav ul.subnav a:before {
   text-align: center; }
 
-/* line 40, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+/* line 40, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
 .button {
   padding: 0.8em 1.4em; }
-  /* line 42, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+  /* line 42, /home/jasperlu/proj3-6-finance/client/stylesheets/general/general */
   .button .fa, .button .sidenav ul.subnav a:before {
     margin-right: 0.5em; }
 
-/* line 1, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 1, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .progress {
   margin: 0;
   padding: 3px;
@@ -7136,14 +7136,14 @@ table {
   border: none;
   background-color: #EEE;
   box-shadow: 0px 0px 6px 0px #B4ADAD inset; }
-  /* line 8, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 8, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .progress .meter {
     background-color: #60B602;
     font-size: 0.8em;
     line-height: 12px;
     text-align: right;
     color: white; }
-  /* line 17, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 17, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .progress .meter-value {
     display: inline-block;
     background-color: gray;
@@ -7153,11 +7153,11 @@ table {
     border-radius: 2px;
     vertical-align: middle; }
 
-/* line 34, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 34, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .top-bar {
   background: none; }
 
-/* line 38, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 38, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .sidenav, .card, .card-expenses, .card-budget-test, .card-budget {
   margin-top: 1.61735%;
   padding: 1em;
@@ -7166,23 +7166,23 @@ table {
   box-shadow: 0px 0px 5px -2px black;
   color: grey; }
 
-/* line 47, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 47, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .sidenav {
   margin: 0;
   padding: 0.4em 0;
   font-weight: 300;
   font-size: 0.875em; }
-  /* line 54, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 54, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .sidenav ul, .sidenav li, .sidenav a {
     font-size: inherit; }
-  /* line 58, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 58, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .sidenav li {
     list-style: none; }
-    /* line 60, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+    /* line 60, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
     .sidenav li.active > a {
       border-left: 0.3em solid #70cf02;
       background-color: #F5F5F5; }
-  /* line 66, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 66, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .sidenav a {
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
@@ -7191,35 +7191,35 @@ table {
     padding: 0.7em 1.7em;
     color: inherit;
     line-height: 1.5em; }
-    /* line 72, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+    /* line 72, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
     .sidenav a:hover {
       background-color: #F5F5F5; }
-    /* line 75, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+    /* line 75, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
     .sidenav a i.fa {
       float: right;
       line-height: inherit; }
-  /* line 83, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 83, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .sidenav ul.subnav {
     margin-left: 0; }
-    /* line 85, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+    /* line 85, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
     .sidenav ul.subnav a {
       padding: 0.4em;
       padding-left: 2em; }
-      /* line 88, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+      /* line 88, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
       .sidenav ul.subnav a:hover {
         background-color: #e8e8e8; }
-      /* line 91, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+      /* line 91, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
       .sidenav ul.subnav a:before {
         width: 1.8em;
         text-align: center; }
 
-/* line 105, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 105, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .content {
   padding: 1em 0;
   color: grey;
   font-size: 0.875em; }
 
-/* line 111, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 111, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .progress-label {
   *zoom: 1;
   display: block; }
@@ -7230,7 +7230,7 @@ table {
   /* line 23, ../packages/bourbon-scss/addons/clearfix */
   .progress-label:after {
     clear: both; }
-  /* line 114, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 114, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .progress-label span {
     float: left;
     display: block;
@@ -7240,29 +7240,29 @@ table {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .progress-label span:last-child {
       margin-right: 0; }
-  /* line 122, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 122, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .progress-label .budget {
     color: #60B602;
     text-align: right;
     font-weight: 600; }
 
-/* line 129, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 129, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .budget-item {
   margin-bottom: 0.5em; }
-  /* line 131, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 131, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .budget-item:last-child {
     margin-bottom: 0; }
 
 
-/* line 143, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 143, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-expenses .button.expense {
   background-color: #DA453E; }
-/* line 146, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 146, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-expenses .button.income {
   background-color: #60B602; }
 
 
-/* line 159, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 159, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle-left {
   position: absolute;
   right: 2.9em;
@@ -7271,10 +7271,10 @@ table {
   width: 3.5em;
   height: 3.5em;
   background-color: white; }
-  /* line 167, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 167, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .card-budget .circle-left h5 {
     color: red; }
-/* line 171, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 171, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle-total {
   position: absolute;
   margin-top: 0.75em;
@@ -7282,39 +7282,39 @@ table {
   width: 3.5em;
   height: 3.5em;
   background-color: white; }
-  /* line 178, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  /* line 178, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .card-budget .circle-total h5 {
     color: green; }
-/* line 183, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 183, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle {
   width: 3em;
   height: 3em;
   border: 1px solid lightgrey;
   border-radius: 1.5em;
   line-height: 3em; }
-/* line 192, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 192, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget h5 {
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;
   line-height: 2em; }
-/* line 198, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 198, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget hr {
   border-width: 1em;
   border-color: green; }
 
-/* line 1, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+/* line 1, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
 .login-wrapper {
   height: 100%;
   text-align: center;
   font-size: 0; }
-  /* line 6, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+  /* line 6, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
   .login-wrapper:before {
     display: inline-block;
     height: 100%;
     vertical-align: middle;
     font-size: 0; }
-  /* line 12, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+  /* line 12, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
   .login-wrapper .login {
     display: inline-block;
     padding: 1.4em;
@@ -7322,18 +7322,18 @@ table {
     background-color: #FAFAFA;
     vertical-align: middle;
     font-size: 16px; }
-    /* line 20, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+    /* line 20, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login-wrapper .login h1 {
       font-size: 4em; }
   @media only screen and (min-width: 450px) {
-    /* line 26, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+    /* line 26, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login-wrapper:before {
       content: ''; }
-    /* line 29, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+    /* line 29, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login-wrapper .login {
       margin-top: 0;
       width: 450px; } }
-  /* line 35, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+  /* line 35, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
   .login-wrapper #google-login, .login-wrapper #fb-login, .login-wrapper #github-login {
     -webkit-transition: background-color 0.2s;
     -moz-transition: background-color 0.2s;
@@ -7344,33 +7344,94 @@ table {
     color: white;
     font-size: 1.5em;
     cursor: pointer; }
-    /* line 43, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+    /* line 43, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login-wrapper #google-login:last-child, .login-wrapper #fb-login:last-child, .login-wrapper #github-login:last-child {
       margin-bottom: 0; }
-    /* line 46, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+    /* line 46, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login-wrapper #google-login .fa, .login-wrapper #google-login .sidenav ul.subnav a:before, .login-wrapper #fb-login .fa, .login-wrapper #fb-login .sidenav ul.subnav a:before, .login-wrapper #github-login .fa, .login-wrapper #github-login .sidenav ul.subnav a:before {
       float: left;
       width: 1em; }
-  /* line 52, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+  /* line 52, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
   .login-wrapper #google-login {
     background-color: #d34332; }
-    /* line 54, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+    /* line 54, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login-wrapper #google-login:hover {
       background-color: #c2392a; }
-  /* line 59, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+  /* line 59, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
   .login-wrapper #fb-login {
     background-color: #3b5998; }
-    /* line 61, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+    /* line 61, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login-wrapper #fb-login:hover {
       background-color: #344f86; }
-  /* line 66, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+  /* line 66, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
   .login-wrapper #github-login {
     background-color: #444; }
-    /* line 68, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/login */
+    /* line 68, /home/jasperlu/proj3-6-finance/client/stylesheets/page/login */
     .login-wrapper #github-login:hover {
       background-color: #373737; }
 
-/* line 6, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+/* line 1, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+#modal-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; }
+
+/* line 10, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+#modal {
+  position: absolute;
+  height: auto;
+  width: 30%;
+  max-width: 500px;
+  min-width: 400px;
+  /*background-color:#E9E9E9;*/
+  background-color: #FAFAFA;
+  border-radius: 1px;
+  top: 150px;
+  margin-left: -175px;
+  left: 50%;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-size: 1em; }
+  /* line 25, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+  #modal .modal-expense input[type=text], #modal .modal-expense input[type=password], #modal .modal-expense input[type=email] {
+    margin: 0px;
+    margin-bottom: 5px;
+    padding: 10px;
+    box-sizing: border-box;
+    width: 100%;
+    display: inline-block; }
+  /* line 34, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+  #modal .modal-expense select {
+    width: 100px; }
+  /* line 38, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+  #modal .button {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 100%; }
+    /* line 42, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+    #modal .button.expense {
+      background-color: #DA453E; }
+    /* line 45, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+    #modal .button.income {
+      background-color: #60B602; }
+  /* line 49, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+  #modal .modal-inner {
+    width: 100%;
+    padding: 5%; }
+  /* line 53, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+  #modal h1, #modal h3 {
+    margin: 0 auto;
+    text-align: center;
+    font-weight: 300; }
+  /* line 58, /home/jasperlu/proj3-6-finance/client/stylesheets/page/modal */
+  #modal h3 {
+    color: grey;
+    font-size: 1em;
+    margin-top: 5px; }
+
+/* line 6, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
 .content {
   *zoom: 1;
   display: block; }
@@ -7382,7 +7443,7 @@ table {
   .content:after {
     clear: both; }
 
-/* line 10, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+/* line 10, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
 .sidenav, .card, .card-expenses, .card-budget-test, .card-budget {
   float: left;
   display: block;
@@ -7392,7 +7453,7 @@ table {
   %card:last-child {
     margin-right: 0; }
 
-/* line 15, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+/* line 15, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
 .card-expenses .button.expense {
   float: left;
   display: block;
@@ -7402,7 +7463,7 @@ table {
   /* line 40, ../packages/neat-scss/grid/span-columns */
   .card-expenses .button.expense:last-child {
     margin-right: 0; }
-/* line 19, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+/* line 19, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
 .card-expenses .button.income {
   float: left;
   display: block;
@@ -7413,7 +7474,7 @@ table {
     margin-right: 0; }
 
 @media only screen and (min-width: 700px) {
-  /* line 25, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 25, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .card-expenses {
     float: left;
     display: block;
@@ -7422,10 +7483,10 @@ table {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .card-expenses:last-child {
       margin-right: 0; }
-    /* line 27, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+    /* line 27, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
     .card-expenses .button {
       border-radius: 2px; }
-      /* line 29, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+      /* line 29, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
       .card-expenses .button.expense {
         float: left;
         display: block;
@@ -7435,7 +7496,7 @@ table {
         /* line 40, ../packages/neat-scss/grid/span-columns */
         .card-expenses .button.expense:last-child {
           margin-right: 0; }
-      /* line 33, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+      /* line 33, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
       .card-expenses .button.income {
         float: left;
         display: block;
@@ -7444,7 +7505,7 @@ table {
         /* line 40, ../packages/neat-scss/grid/span-columns */
         .card-expenses .button.income:last-child {
           margin-right: 0; }
-  /* line 38, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 38, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .card-budget-test {
     float: left;
     display: block;
@@ -7454,7 +7515,7 @@ table {
     /* line 40, ../packages/neat-scss/grid/span-columns */
     .card-budget-test:last-child {
       margin-right: 0; }
-  /* line 42, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 42, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .card-budget {
     float: left;
     display: block;
@@ -7465,19 +7526,19 @@ table {
       margin-right: 0; } }
 
 @media only screen and (min-width: 700px) {
-  /* line 48, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 48, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .top-bar {
     padding: 15px 0;
     height: auto; }
-    /* line 51, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+    /* line 51, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
     .top-bar .name h1 a {
       padding-left: 50px; }
-  /* line 56, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 56, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .sidenav {
     position: absolute;
     margin-left: 1.5em;
     width: 14em; }
-  /* line 62, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/layout */
+  /* line 62, /home/jasperlu/proj3-6-finance/client/stylesheets/page/layout */
   .content {
     margin-left: 15.5em;
     padding: 0 1.4%; } }

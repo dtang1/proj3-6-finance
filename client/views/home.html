@@ -26,6 +26,7 @@
 		{{>cardExpenses}}
 		{{>cardBudget}}
 	</div>
+        {{> modalContainer}}
 </template>
 
 <template name="cardExpenses">
@@ -89,22 +90,33 @@
 	</div>
 </template>
 
+<template name="modalContainer">
+<div style="display:none" id="modal-container">
+    {{> modalOverlay}}
+<div id="modal" role="dialog">
+    <div class="modal-inner">
+	{{> modalLogin}}
+    </div>
+</div>
+</div>
+
+</template>
+
 <template name="modalOverlay">
 <div id="modal-overlay"></div>
 </template>
 
 <template name="modalLogin">
-<div class="modal-login">
-    <h1>Welcome Back!</h1>
-    <div id="fb-login">
-    </div>
-    <h3>or</h3>
-    Username:
-    <input type="text" />
-    Password:
-    <input type="password" />
-    <input type="checkbox" /> Remember me
-    <div class="button">Log In!</div>
-    Not a member yet? <a>Sign up!</a>
+<div class="modal-expense">
+    <h2>Expense</h2>
+    <input type="text" name="mm" placeholder="mm" style="width:50px"/><input type="text" placeholder="dd" name="dd" style="width:50px"/><input type="text" placeholder="yy" name="yy"style="width:50px"/>
+    <input type="text" style="width:80px" placeholder = "spent"/>
+    <select>
+        <option>Steve</option>
+        <option>you know</option>
+        <option>what to do here</option>
+    </select>
+    <input type="text" placeholder = "description" />
+    <div class="button expense">Add</div>
 </div>
 </template>
