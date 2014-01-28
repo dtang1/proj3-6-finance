@@ -110,13 +110,13 @@
 <div class="modal-expense">
     <h2>{{type}}</h2>
     <input type="text" name="mm" placeholder="mm" style="width:50px"/><input type="text" placeholder="dd" name="dd" style="width:50px"/><input type="text" placeholder="yy" name="yy"style="width:50px"/>
-    <input type="text" style="width:80px" placeholder = "spent"/>
-    <select>
+    <input id="value" type="text" style="width:80px" placeholder = "value"/>
+    <select id="category">
         <option>Steve</option>
         <option>you know</option>
         <option>what to do here</option>
     </select>
-    <input type="text" placeholder = "description" />
+    <input id="description"type="text" placeholder = "description" />
     <div class="button {{type}}">Add</div>
 </div>
 </template>

@@ -37,3 +37,14 @@ Template.modalTransac.type = function() {
     if(Session.get('transaction'))
         return Session.get('transaction');
 }
+
+Template.modalTransac.events({
+    'click .button': function() {
+	var date = new Date($('input[name=yy]').val(),$('input[name=mm]').val() - 1,$('input[name=dd]').val());
+        var desc = $('#description').val();
+        var val = $('#value').val();
+        var cat = $('#category').val();
+
+});
+
+
