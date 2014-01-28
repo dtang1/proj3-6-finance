@@ -28,6 +28,7 @@
 </template>
 
 <template name="expenseCards">
+{{#if foodTransacs}}
 <div class="card-expenses">
     Food
 		<table>
@@ -38,14 +39,16 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each transacs}}
+                        {{#each foodTransacs}}
                             <tr>
                                 {{> transRow}}
                             </tr>
                         {{/each}}
 		</table>
-</div>
-<div class="card-expenses">
+            </div>
+            {{/if}}
+            {{#if clothesTransacs}}
+                <div class="card-expenses">
     Clothing
 		<table>
 			<thead>
@@ -55,14 +58,16 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each transacs}}
+                        {{#each clothesTransacs}}
                             <tr>
                                 {{> transRow}}
                             </tr>
                         {{/each}}
 		</table>
-</div>
-<div class="card-expenses">
+                </div>
+                {{/if}}
+                {{#if enterTransacs}}
+                <div class="card-expenses">
     Entertainment
 		<table>
 			<thead>
@@ -72,14 +77,16 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each transacs}}
+                        {{#each enterTransacs}}
                             <tr>
                                 {{> transRow}}
                             </tr>
                         {{/each}}
 		</table>
-</div>
-<div class="card-expenses">
+                </div>
+                {{/if}}
+                {{#if otherTransacs}}
+                <div class="card-expenses">
     Other
 		<table>
 			<thead>
@@ -89,11 +96,12 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each transacs}}
+                        {{#each otherTransacs}}
                             <tr>
                                 {{> transRow}}
                             </tr>
                         {{/each}}
 		</table>
 </div>
+{{/if}}
 </template>
