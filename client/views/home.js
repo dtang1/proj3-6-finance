@@ -18,3 +18,18 @@ Template.home.events({
         
     }
 });
+
+Template.cardExpenses.events({
+    'click .income': function() {
+	$('#modal-container').css('display','block');
+    },
+    'click .expense': function() {
+	$('#modal-container').css('display','block');
+    }
+});
+
+Template.modalOverlay.events({
+    'click': function() {
+        $('#modal-container').css('display','none');
+    }
+});
