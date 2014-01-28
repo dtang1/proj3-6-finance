@@ -26,6 +26,19 @@ Template.cardExpenses.rendered = function() {
     });
 }
 
+Template.cardExpenses.transacs = function() {
+    return Transactions.find({userId: Meteor.userId()},{sort: {date: -1}}).fetch();
+}
+
+Template.transRow.date = function() {
+    return this.date.getMonth()+1 + "/" + this.date.getDate() + "/" + (this.date.getYear()+1900)
+}
+
+Template.transRow.expenseBool = function() {
+    return this.type == 'expense';
+}
+
+
 Template.modalOverlay.events({
     'click': function() {
         $('#modal-container').css('display','none');
@@ -37,6 +50,12 @@ Template.modalTransac.type = function() {
     if(Session.get('transaction'))
         return Session.get('transaction');
 }
+
+Template.modalTransac.expenseBool = function() {
+    if(Session.get('transaction'))
+        return Session.get('transaction') == 'expense';
+}
+
 
 Template.modalTransac.events({
     'click .button': function() {
