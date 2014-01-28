@@ -10,7 +10,7 @@
 				<li>
 					<a href="#">Savings</a>
 				</li>
-                                <!--
+				<!--
 				<li>
 					<a class="add">Add an account</a>
 				</li>
@@ -21,14 +21,14 @@
 			<a href="#"><i class="fa fa-cog"></i>Settings</a>
 		</li>
 		<li>
-			<a id = "logout" href ="http://moneyinthebank.meteor.com/"><i class="fa fa-sign-out"></i>Logout</a>
+			<a id="logout" href="http://moneyinthebank.meteor.com/"><i class="fa fa-sign-out"></i>Logout</a>
 		</li>
 	</ul>
 	<div class="content">
 		{{>cardExpenses}}
 		{{>cardBudget}}
 	</div>
-        {{> modalContainer}}
+	{{> modalContainer}}
 </template>
 
 <template name="cardExpenses">
@@ -39,29 +39,30 @@
 			<thead>
 				<tr>
 					<th>Date</th>
-                                        <th>Source</th>
+					<th>Source</th>
 					<th>Info</th>
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each transacs}}
-                            <tr>
-                                {{> transRow}}
-                            </tr>
-                        {{/each}}
+			{{#each transacs}}
+			<tr>
+				{{> transRow}}
+			</tr>
+			{{/each}}
 		</table>
 	</div>
 </template>
 
 <template name="transRow">
-<th>{{date}}</th>
-<th>{{category}}</th>
-<th>{{description}}</th>
-<th class="{{#if expenseBool}}red{{else}}green{{/if}}"><b>{{value}}</b></th>
+	<th>{{date}}</th>
+	<th>{{category}}</th>
+	<th>{{description}}</th>
+	<th class="{{#if expenseBool}}red{{else}}green{{/if}}"><b>{{value}}</b>
+	</th>
 </template>
 
 <template name="cardBudget">
-	<div class="card-budget-test">
+	<div class="card-budget">
 		<h4>Budget</h4>
 		<div class="budget-item">
 			<div class="progress-label">
@@ -69,11 +70,11 @@
 					Food
 				</span>
 				<span class="budget">
-                                    ${{foodSpent}}/${{foodBudg}}
+					${{foodSpent}}/${{foodBudg}}
 				</span>
 			</div>
 			<div class="progress round">
-                            <span class="meter" style="width: {{foodPerc}}%"></span>
+				<span class="meter" style="width: {{foodPerc}}%"></span>
 			</div>
 		</div>
 		<div class="budget-item">
@@ -82,76 +83,78 @@
 					Clothing
 				</span>
 				<span class="budget">
-                                    ${{clothesSpent}}/${{clothesBudg}}
+					${{clothesSpent}}/${{clothesBudg}}
 				</span>
 			</div>
 			<div class="progress round">
-                            <span class="meter" style="width: {{clothesPerc}}%"></span>
+				<span class="meter" style="width: {{clothesPerc}}%"></span>
 			</div>
 		</div>
 		<div class="budget-item">
 			<div class="progress-label">
 				<span class="name">
-                                    Entertainment
+					Entertainment
 				</span>
 				<span class="budget">
-                                    ${{enterSpent}}/${{enterBudg}}
+					${{enterSpent}}/${{enterBudg}}
 				</span>
 			</div>
 			<div class="progress round">
-                            <span class="meter" style="width: {{enterPerc}}%"></span>
+				<span class="meter" style="width: {{enterPerc}}%"></span>
 			</div>
 		</div>
 		<div class="budget-item">
 			<div class="progress-label">
 				<span class="name">
-                                    Other
+					Other
 				</span>
 				<span class="budget">
-                                    ${{otherSpent}}/${{otherBudg}}
+					${{otherSpent}}/${{otherBudg}}
 				</span>
 			</div>
 			<div class="progress round">
-                            <span class="meter" style="width: {{otherPerc}}%"></span>
+				<span class="meter" style="width: {{otherPerc}}%"></span>
 			</div>
 		</div>
 	</div>
 </template>
 
 <template name="modalContainer">
-<div style="display:none" id="modal-container">
-    {{> modalOverlay}}
-<div id="modal" role="dialog">
-    <div class="modal-inner">
-	{{> modalTransac}}
-    </div>
-</div>
-</div>
+	<div style="display:none" id="modal-container">
+		{{> modalOverlay}}
+		<div id="modal" role="dialog">
+			<div class="modal-inner">
+				{{> modalTransac}}
+			</div>
+		</div>
+	</div>
 
 </template>
 
 <template name="modalOverlay">
-<div id="modal-overlay"></div>
+	<div id="modal-overlay"></div>
 </template>
 
 <template name="modalTransac">
-<div class="modal-expense">
-    <h2>{{type}}</h2>
-    <input type="text" maxlength="2" name="mm" placeholder="mm" style="width:50px"/><input type="text" maxlength="2" placeholder="dd" name="dd" style="width:50px"/><input type="text" maxlength="4" placeholder="yyyy" name="yy"style="width:70px"/>
-    <input id="value" type="text" style="width:80px" placeholder = "value"/>
-    <select id="category">
-    {{#if expenseBool}}
-        <option>Food</option>
-        <option>Clothing</option>
-        <option>Entertainment</option>
-        <option>Other</option>
-        {{else}}
-        <option>Salary</option>
-        <option>Bonus</option>
-        <option>Gift</option>
-    {{/if}}
-    </select>
-    <input id="description"type="text" placeholder = "description" />
-    <div class="button {{type}}">Add</div>
-</div>
+	<div class="modal-expense">
+		<h2>{{type}}</h2>
+		<input type="text" maxlength="2" name="mm" placeholder="mm" style="width:50px" />
+		<input type="text" maxlength="2" placeholder="dd" name="dd" style="width:50px" />
+		<input type="text" maxlength="4" placeholder="yyyy" name="yy" style="width:70px" />
+		<input id="value" type="text" style="width:80px" placeholder="value" />
+		<select id="category">
+			{{#if expenseBool}}
+			<option>Food</option>
+			<option>Clothing</option>
+			<option>Entertainment</option>
+			<option>Other</option>
+			{{else}}
+			<option>Salary</option>
+			<option>Bonus</option>
+			<option>Gift</option>
+			{{/if}}
+		</select>
+		<input id="description" type="text" placeholder="description" />
+		<div class="button {{type}}">Add</div>
+	</div>
 </template>
