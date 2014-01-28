@@ -22,8 +22,7 @@ Template.home.events({
 Template.cardExpenses.rendered = function() {
     $('.button').click(function() {
         $('#modal-container').css('display','block');
-        Session.set('transaction',$(this).attr('class').split(/\s+/)[2]);
-    });
+        Session.set('transaction',$(this).attr('class').split(/\s+/)[2]); });
 }
 
 Template.cardExpenses.transacs = function() {
@@ -73,6 +72,19 @@ Template.cardBudget.otherSpent = function(){
         if(k[x])
             sum += k[x].value;
     return sum;
+}
+
+Template.cardBudget.foodPerc = function() {
+    return Template.cardBudget.foodSpent / Template.cardBudget.foodBudg * 100;
+}
+Template.cardBudget.clothesPerc = function() {
+    return Template.cardBudget.clothesSpent / Template.cardBudget.clothesBudg * 100;
+}
+Template.cardBudget.enterPerc = function() {
+    return Template.cardBudget.enterSpent / Template.cardBudget.enterBudg * 100;
+}
+Template.cardBudget.otherPerc = function() {
+    return Template.cardBudget.otherSpent / Template.cardBudget.enterBudg * 100;
 }
 
 Template.transRow.date = function() {
