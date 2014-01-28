@@ -7260,9 +7260,15 @@ table {
 /* line 146, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-expenses .button.income {
   background-color: #60B602; }
+/* line 150, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+.card-expenses .red {
+  color: #DA453E; }
+/* line 153, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+.card-expenses .green {
+  color: #60B602; }
 
 
-/* line 159, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 165, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle-left {
   position: absolute;
   right: 2.9em;
@@ -7271,10 +7277,10 @@ table {
   width: 3.5em;
   height: 3.5em;
   background-color: white; }
-  /* line 167, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+  /* line 173, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .card-budget .circle-left h5 {
     color: red; }
-/* line 171, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 177, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle-total {
   position: absolute;
   margin-top: 0.75em;
@@ -7282,23 +7288,23 @@ table {
   width: 3.5em;
   height: 3.5em;
   background-color: white; }
-  /* line 178, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+  /* line 184, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
   .card-budget .circle-total h5 {
     color: green; }
-/* line 183, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 189, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .circle {
   width: 3em;
   height: 3em;
   border: 1px solid lightgrey;
   border-radius: 1.5em;
   line-height: 3em; }
-/* line 192, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 198, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget h5 {
   text-align: center;
   font-weight: bold;
   font-size: 1.2em;
   line-height: 2em; }
-/* line 198, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
+/* line 204, /home/jasperlu/proj3-6-finance/client/stylesheets/page/home */
 .card-budget hr {
   border-width: 1em;
   border-color: green; }
