@@ -30,6 +30,17 @@ Template.cardExpenses.transacs = function() {
     return Transactions.find({userId: Meteor.userId()},{sort: {date: -1}}).fetch();
 }
 
+Template.cardBudget.helpers({
+    'foodBudg':function(){},
+    'clothesBudg':function(){},
+    'enterBudg':function(){},
+    'otherBudg':function(){},
+    'foodSpent':function(){},
+    'clothesSpent':function(){},
+    'enterSpent':function(){},
+    'otherSpent':function(){},
+});
+
 Template.transRow.date = function() {
     return this.date.getMonth()+1 + "/" + this.date.getDate() + "/" + (this.date.getYear()+1900)
 }
