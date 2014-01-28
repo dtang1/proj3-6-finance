@@ -18,6 +18,17 @@ config.insert({
    	secret: '936e6c8cb3590f457f4262801c428a952ad1a666'
 });
 
+var getEmail = function(user, service) {
+	if (service == 'github') {
+		var accessToken = user.services.github.accessToken;
+		return HTTP.get("https://api.github.com/user/emails", {
+			headers: {"User-Agent": userAgent},
+			params: {access_token: accessToken}
+		}).data[0];
+	}
+	return user.services[service].email;
+};
+
 Accounts.onCreateUser(function(options, user) {
 	if (user.services) {
 		if (options.profile) {
@@ -27,6 +38,9 @@ Accounts.onCreateUser(function(options, user) {
 
 		var email = getEmail(user, service);
 		var existingUser = Meteor.users.findOne({'username': email});
+
+		console.log(existingUser);
+		console.log(user);
 
 		if (!existingUser) {
 			// set email as username
@@ -39,7 +53,6 @@ Accounts.onCreateUser(function(options, user) {
 				entertainment: 1000,
 				other: 1000
 			};
-			Meteor.users.insert({userID:Meteor.userId(),income:0,food:0,clothing:0,entertainment:0,other:0});
 			return user;
 		}
 
@@ -47,6 +60,7 @@ Accounts.onCreateUser(function(options, user) {
 		existingUser.services[service] = user.services[service];
 		existingUser.services.resume.loginTokens = user.services.resume.loginTokens;
 
+		Meteor.users.remove({_id: existingUser._id});
 		// record is re-inserted
 		return existingUser;
 	}
