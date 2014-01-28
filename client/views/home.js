@@ -1,11 +1,11 @@
 Template.home.helpers({
-	transactions: function() {
-		return Transactions.find();
-	}
+    transactions: function() {
+        return Transactions.find();
+    }
 });
 
 Template.home.events({
-    
+
     "click #logout": function(e,tmpl){
         Meteor.logout(function(err){
             if(err){
@@ -15,13 +15,13 @@ Template.home.events({
                 //show logged out
             }
         });
-        
+
     }
 });
 
 Template.cardExpenses.rendered = function() {
     $('.button').click(function() {
-	$('#modal-container').css('display','block');
+        $('#modal-container').css('display','block');
         Session.set('transaction',$(this).attr('class').split(/\s+/)[2]);
     });
 }
@@ -30,50 +30,50 @@ Template.cardExpenses.transacs = function() {
     return Transactions.find({userId: Meteor.userId()},{sort: {date: -1}}).fetch();
 }
 
-Template.cardBudget.helpers({
-    /*
-    'foodBudg':function(){
-        return Meteor.user.profile.budget.food;
-    },
-    'clothesBudg':function(){
-        return Meteor.user.profile.budget.clothing;
-    },
-    'enterBudg':function(){
-        return Meteor.user.profile.budget.entertainment;
-    },
-    'otherBudg':function(){
-        return Meteor.user.profile.budget.other;
-    },
-    */
-    'foodSpent':function(){
-        var k = Transaction.find({userId: Meteor.userId, category: 'Food'});
-        var sum = 0;
-        for(x in k)
+Template.cardBudget.foodBudg = function(){
+    return Meteor.user.profile.budget.food;
+}
+Template.cardBudget.clothesBudg = function(){
+    return Meteor.user.profile.budget.clothing;
+}
+Template.cardBudget.enterBudg = function(){
+    return Meteor.user.profile.budget.entertainment;
+}
+Template.cardBudget.otherBudg = function(){
+    return Meteor.user.profile.budget.other;
+}
+Template.cardBudget.foodSpent = function(){
+    var k = Transactions.find({userId: Meteor.userId, category: 'Food'}).fetch();
+    var sum = 0;
+    for(x in k)
+        if(k[x])
             sum += k[x].value;
-        return sum;
-    },
-    'clothesSpent':function(){
-        var k = Transaction.find({userId: Meteor.userId, category: 'Clothing'});
-        var sum = 0;
-        for(x in k)
+    return sum;
+}
+Template.cardBudget.clothesSpent = function(){
+    var k = Transactions.find({userId: Meteor.userId, category: 'Clothing'}).fetch();
+    var sum = 0;
+    for(x in k)
+        if(k[x])
             sum += k[x].value;
-        return sum;
-    },
-    'enterSpent':function(){
-        var k = Transaction.find({userId: Meteor.userId, category: 'Entertainment'});
-        var sum = 0;
-        for(x in k)
+    return sum;
+}
+Template.cardBudget.enterSpent = function(){
+    var k = Transactions.find({userId: Meteor.userId, category: 'Entertainment'}).fetch();
+    var sum = 0;
+    for(x in k)
+        if(k[x])
             sum += k[x].value;
-        return sum;
-    },
-    'otherSpent':function(){
-        var k = Transaction.find({userId: Meteor.userId, category: 'Other'});
-        var sum = 0;
-        for(x in k)
+    return sum;
+}
+Template.cardBudget.otherSpent = function(){
+    var k = Transactions.find({userId: Meteor.userId, category: 'Other'}).fetch();
+    var sum = 0;
+    for(x in k)
+        if(k[x])
             sum += k[x].value;
-        return sum;
-    },
-});
+    return sum;
+}
 
 Template.transRow.date = function() {
     return this.date.getMonth()+1 + "/" + this.date.getDate() + "/" + (this.date.getYear()+1900)
@@ -104,7 +104,7 @@ Template.modalTransac.expenseBool = function() {
 
 Template.modalTransac.events({
     'click .button': function() {
-	var date = new Date($('input[name=yy]').val(),$('input[name=mm]').val() - 1,$('input[name=dd]').val());
+        var date = new Date($('input[name=yy]').val(),$('input[name=mm]').val() - 1,$('input[name=dd]').val());
         var desc = $('#description').val();
         var val = $('#value').val();
         var cat = $('#category').val();
@@ -121,9 +121,9 @@ Template.modalTransac.events({
             category: cat,
         }, function(e,r) {
             if(e)
-                alert(e);
+            alert(e);
             else
-                console.log('woohooo');
+            console.log('woohooo');
         }); 
         $('.modal-expense').children().val('');
         $('#modal-container').css('display','none');
