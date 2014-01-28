@@ -31,14 +31,48 @@ Template.cardExpenses.transacs = function() {
 }
 
 Template.cardBudget.helpers({
-    'foodBudg':function(){},
-    'clothesBudg':function(){},
-    'enterBudg':function(){},
-    'otherBudg':function(){},
-    'foodSpent':function(){},
-    'clothesSpent':function(){},
-    'enterSpent':function(){},
-    'otherSpent':function(){},
+    /*
+    'foodBudg':function(){
+        return Meteor.user.profile.budget.food;
+    },
+    'clothesBudg':function(){
+        return Meteor.user.profile.budget.clothing;
+    },
+    'enterBudg':function(){
+        return Meteor.user.profile.budget.entertainment;
+    },
+    'otherBudg':function(){
+        return Meteor.user.profile.budget.other;
+    },
+    */
+    'foodSpent':function(){
+        var k = Transaction.find({userId: Meteor.userId, category: 'Food'});
+        var sum = 0;
+        for(x in k)
+            sum += k[x].value;
+        return sum;
+    },
+    'clothesSpent':function(){
+        var k = Transaction.find({userId: Meteor.userId, category: 'Clothing'});
+        var sum = 0;
+        for(x in k)
+            sum += k[x].value;
+        return sum;
+    },
+    'enterSpent':function(){
+        var k = Transaction.find({userId: Meteor.userId, category: 'Entertainment'});
+        var sum = 0;
+        for(x in k)
+            sum += k[x].value;
+        return sum;
+    },
+    'otherSpent':function(){
+        var k = Transaction.find({userId: Meteor.userId, category: 'Other'});
+        var sum = 0;
+        for(x in k)
+            sum += k[x].value;
+        return sum;
+    },
 });
 
 Template.transRow.date = function() {
