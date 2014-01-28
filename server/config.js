@@ -14,8 +14,8 @@ config.insert({
 });
 config.insert({
 	service: 'github',
-	clientId: 'a989007bd2ffca06737f',
-	secret: '29e3dc9df13196b0c218b5caec849548060c3d3b'
+	clientId: '5f40590c7972a395108f',
+   	secret: '936e6c8cb3590f457f4262801c428a952ad1a666'
 });
 
 Accounts.onCreateUser(function(options, user) {
