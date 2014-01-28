@@ -44,7 +44,26 @@ Template.modalTransac.events({
         var desc = $('#description').val();
         var val = $('#value').val();
         var cat = $('#category').val();
-
+        var type = 'income';
+        if(Session.get('transaction') == 'expense') {
+            val = val * -1;
+            type = 'expense';
+        }
+        Meteor.call('addTransaction', {
+            date: date,
+            description: desc,
+            value: val,
+            type: type,
+            category: cat,
+        }, function(e,r) {
+            if(e)
+                alert(e);
+            else
+                console.log('woohooo');
+        }); 
+        $('.modal-expense').children().val('');
+        $('#modal-container').css('display','none');
+    }
 });
 
 
