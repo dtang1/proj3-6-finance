@@ -19,17 +19,21 @@ Template.home.events({
     }
 });
 
-Template.cardExpenses.events({
-    'click .income': function() {
+Template.cardExpenses.rendered = function() {
+    $('.button').click(function() {
 	$('#modal-container').css('display','block');
-    },
-    'click .expense': function() {
-	$('#modal-container').css('display','block');
-    }
-});
+        Session.set('transaction',$(this).attr('class').split(/\s+/)[2]);
+    });
+}
 
 Template.modalOverlay.events({
     'click': function() {
         $('#modal-container').css('display','none');
+        Session.set('transaction',null);
     }
 });
+
+Template.modalTransac.type = function() {
+    if(Session.get('transaction'))
+        return Session.get('transaction');
+}

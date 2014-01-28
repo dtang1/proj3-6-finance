@@ -95,7 +95,7 @@
     {{> modalOverlay}}
 <div id="modal" role="dialog">
     <div class="modal-inner">
-	{{> modalLogin}}
+	{{> modalTransac}}
     </div>
 </div>
 </div>
@@ -106,9 +106,9 @@
 <div id="modal-overlay"></div>
 </template>
 
-<template name="modalLogin">
+<template name="modalTransac">
 <div class="modal-expense">
-    <h2>Expense</h2>
+    <h2>{{type}}</h2>
     <input type="text" name="mm" placeholder="mm" style="width:50px"/><input type="text" placeholder="dd" name="dd" style="width:50px"/><input type="text" placeholder="yy" name="yy"style="width:50px"/>
     <input type="text" style="width:80px" placeholder = "spent"/>
     <select>
@@ -117,6 +117,6 @@
         <option>what to do here</option>
     </select>
     <input type="text" placeholder = "description" />
-    <div class="button expense">Add</div>
+    <div class="button {{type}}">Add</div>
 </div>
 </template>
