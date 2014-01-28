@@ -1,57 +1,35 @@
-Template.home.helpers({
-	transactions: function() {
-		return Transactions.find();
-	}
-});
-
-Template.home.events({
-	"click #logout": function(e, tmpl) {
-		Meteor.logout(function(err) {
-			Meteor.logout(function(e) {
-				if (e) alert(e);
-				else Router.go('login');
-			});
-		});
-	}
-});
-/*
-Template.cardExpenses.rendered = function() {
-	$('.button').click(function() {
-		$('#modal-container').css('display', 'block');
-		Session.set('transaction', $(this).attr('class').split(/\s+/)[2]);
-	});
-}*/
-/*
-Template.cardExpenses.transacs = function() {
-	return Transactions.find({
-		userId: Meteor.userId()
-	}, {
-		sort: {
-			date: -1
-		}
-	}).fetch();
-};*/
-
 var getCategories = function() {
 	return Meteor.user() ? Meteor.user().categories : [];
 };
 
-var addCategory = function(cat) {
-	var category = {
-		name: cat
-	};
-	Meteor.users.update({
-		_id: Meteor.userId()
-	}, {
-		$addToSet: {categories: category}
-	});
+var updateUser = function(data) {
+	Meteor.users.update({_id: Meteor.userId()}, data);
 };
+
+var addCategory = function(cat) {
+	var category = {name: cat};
+	updateUser({$addToSet: {categories: category}});
+};
+
+// LOGOUT
+Template.home.events({
+	"click #logout": function(e, tmpl) {
+		Meteor.logout(function(err) {
+			if (err) {
+				console.log(err);
+			} else {
+				Router.go('login');
+			}
+		});
+	}
+});
 
 //***** TRANSACTIONS ******
 Template.modalTransactions.helpers({
 	type: function() {
-		if (Session.get('transaction'))
+		if (Session.get('transaction')) {
 			return Session.get('transaction');
+		}
 	}
 });
 
@@ -62,48 +40,44 @@ Template.modalOverlay.events({
 });
 
 Template.cardTransactions.helpers({
-	'trans': function() {
+	'transactions': function() {
 		return Meteor.user() ? Meteor.user().transactions : [];
 	}
 });
 
-// OTOD
 Template.cardTransactions.events({
 	'click .income': function() {
-		Session.set('transaction', 'income');
+		console.log("income");
+		//Session.set('transaction', 'income');
 		$('#modal-transactions').css('display', '');
 	},
 	'click .expense': function() {
-		Session.set('transaction', 'expense');
+		console.log("expenses");
+		//Session.set('transaction', 'expense');
 		$('#modal-transactions').css('display', '');
 	}
 });
 
-// TODO
 Template.modalTransactions.events({
 	'click .button': function() {
 		var $modal = $('#modal-transactions');
 
-		var date = new Date($modal.find('input[name=yy]').val(), $modal.find('input[name=mm]').val(), $modal.find('input[name=dd]').val());
-		var desc = $modal.find('#desc').val();
-		var val = $modal.find('#value').val();
+		var date = new Date($modal.find('input[name=yy]').val(), $modal.find('input[name=mm]').val(), $modal.find('input[name=dd]').val())
+			,desc = $modal.find('#desc').val()
+			,amount = $modal.find('#value').val();
 		if (Session.get('transaction') == 'expense') {
-			val = -val;
+			amount = -amount;
 		}
 		var cat = $modal.find('#category').val();
 		addCategory(name);
 
 		var transaction = {
 			desc: desc,
-			amount: val,
+			amount: amount,
 			category: cat,
 			date: date
 		};
-		Meteor.users.update({
-			_id: Meteor.userId()
-		}, {
-			$push: {transactions: transaction}
-		});
+		updateUser({$push: {transactions: transaction}});
 		$('.modal-wrapper').css('display', 'none');
 	}
 });
@@ -138,67 +112,14 @@ Template.modalBudgets.events({
 				spent += (-transaction.amount);
 			}
 		}
-		var percent = Math.round((spent/limit) * 1000) / 10;
+		var percent = Math.round((spent / limit) * 1000) / 10;
 		var budget = {
 			'name': name,
 			'spent': spent,
 			'limit': limit,
 			'percent': percent
 		};
-		Meteor.users.update({
-			_id: Meteor.userId()
-		}, {
-			$push: {budgets: budget}
-		});
+		updateUser({$push: {budgets: budget}});
 		$('.modal-wrapper').css('display', 'none');
 	}
 });
-
-/*
-Template.transRow.date = function() {
-	return this.date.getMonth() + 1 + "/" + this.date.getDate() + "/" + (this.date.getYear() + 1900)
-}
-
-Template.transRow.expenseBool = function() {
-	return this.type == 'expense';
-}
-
-
-Template.modalTransac.type = function() {
-	if (Session.get('transaction'))
-		return Session.get('transaction');
-}
-
-Template.modalTransac.expenseBool = function() {
-	if (Session.get('transaction'))
-		return Session.get('transaction') == 'expense';
-}
-
-Template.modalTransac.events({
-	'click .button': function() {
-		var date = new Date($('input[name=yy]').val(), $('input[name=mm]').val() - 1, $('input[name=dd]').val());
-		var desc = $('#description').val();
-		var val = $('#value').val();
-		var cat = $('#category').val();
-		var type = 'income';
-		if (Session.get('transaction') == 'expense') {
-			val = val * -1;
-			type = 'expense';
-		}
-		Meteor.call('addTransaction', {
-			date: date,
-			description: desc,
-			value: val,
-			type: type,
-			category: cat,
-			userID: Meteor.userID(),
-		}, function(e, r) {
-			if (e)
-				alert(e);
-			else
-				console.log('woohooo');
-		});
-		$('.modal-expense').children().val('');
-		$('.modal-wrapper').css('display', 'none');
-	}
-});*/

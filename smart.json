@@ -10,6 +10,7 @@
     "font-awesome-scss": {
       "git": "https://github.com/stevezhu/meteor-font-awesome-scss.git"
     },
-    "observatory": {}
+    "observatory": {},
+    "moment": {}
   }
 }

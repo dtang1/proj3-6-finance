@@ -14,7 +14,8 @@
         "git": "https://github.com/stevezhu/meteor-font-awesome-scss.git",
         "branch": "master"
       },
-      "observatory": {}
+      "observatory": {},
+      "moment": {}
     },
     "packages": {
       "iron-router": {
@@ -51,6 +52,11 @@
         "git": "https://github.com/jhoxray/observatory.git",
         "tag": "v0.3.21",
         "commit": "3d6b436af0a70b784d0f9ec4709907c77bd4fd63"
+      },
+      "moment": {
+        "git": "https://github.com/acreeger/meteor-moment.git",
+        "tag": "v2.5.1",
+        "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
