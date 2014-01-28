@@ -21,66 +21,33 @@ config.insert({
 Accounts.onCreateUser(function(options, user) {
 	if (user.services) {
 		if (options.profile) {
-			user.profile = options.profile
+			user.profile = options.profile;
 		}
 		var service = _.keys(user.services)[0];
-		var email = user.services[service].email;
-		if (!email && user.emails) {
-			email = user.emails.address;
-		}
-		if (!email) {
-			email = options.email;
-		}
-		if (!email) {
-			// if email is not set, there is no way to link it with other accounts
-			return user;
-		}
 
-		// see if any existing user has this email address, otherwise create new
-		var existingUser = Meteor.users.findOne({
-			'emails.address': email
-		});
+		var email = getEmail(user, service);
+		var existingUser = Meteor.users.findOne({'username': email});
+
 		if (!existingUser) {
-			// check for email also in other services
-			var existingGitHubUser = Meteor.users.findOne({'services.github.email': email});
-			var existingGoogleUser = Meteor.users.findOne({'services.google.email': email});
-			var existingFacebookUser = Meteor.users.findOne({'services.facebook.email': email});
-			var doesntExist = !existingGitHubUser && !existingGoogleUser && !existingFacebookUser;
-			if (doesntExist) {
-				// return the user as it came, because there he doesn't exist in the DB yet
-				return user;
-			} else {
-				existingUser = existingGitHubUser || existingGoogleUser || existingFacebookUser;
-				if (existingUser && user.emails) {
-					existingUser.emails = user.emails;
-				}
-			}
-		}
+			// set email as username
+			user.username = email;
 
-		// precaution, these will exist from accounts-password if used
-		if (!existingUser.services) {
-			existingUser.services = {resume: {loginTokens: []}};
+			// DELETE
+			user.profile.budget = {
+				food: 1000,
+				clothing: 1000,
+				entertainment: 1000,
+				other: 1000
+			};
+			Meteor.users.insert({userID:Meteor.userId(),income:0,food:0,clothing:0,entertainment:0,other:0});
+			return user;
 		}
 
 		// copy across new service info
 		existingUser.services[service] = user.services[service];
-		existingUser.services.resume.loginTokens.push(
-			user.services.resume.loginTokens[0]
-		);
+		existingUser.services.resume.loginTokens = user.services.resume.loginTokens;
 
-		// even worse hackery
-		Meteor.users.remove({
-			_id: existingUser._id
-		}); // remove existing record
-		
-	    Meteor.users.insert({userID:Meteor.userId(),income:0,food:0,clothing:0,entertainment:0,other:0});
-		//hardcode this shit
-		existingUser.profile.budget = {
-			food: 1000,
-			clothing: 1000,
-			entertainment: 1000,
-			other: 1000
-		}
-		return existingUser; // record is re-inserted
+		// record is re-inserted
+		return existingUser;
 	}
 });
