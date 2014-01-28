@@ -73,7 +73,7 @@ Accounts.onCreateUser(function(options, user) {
 			_id: existingUser._id
 		}); // remove existing record
 		
-	    Meteor.users.insert({userID:Meteor.userID(),income:0,food:0,clothing:0,entertainment:0,other:0});
+	    Meteor.users.insert({userID:Meteor.userId(),income:0,food:0,clothing:0,entertainment:0,other:0});
 		//hardcode this shit
 		existingUser.profile.budget = {
 			food: 1000,
