@@ -54,9 +54,10 @@ Template.cardBudget.foodSpent = function() {
 		category: 'Food'
 	}).fetch();
 	var sum = 0;
-	for (x in k)
+	for (var x in k)
 		if (k[x])
 			sum += k[x].value;
+	Meteor.users.update({userID:Meteor.userID()},{$set:{food:sum}});
 	return sum;
 }
 Template.cardBudget.clothesSpent = function() {
@@ -65,9 +66,10 @@ Template.cardBudget.clothesSpent = function() {
 		category: 'Clothing'
 	}).fetch();
 	var sum = 0;
-	for (x in k)
+	for (var x in k)
 		if (k[x])
 			sum += k[x].value;
+	Meteor.users.update({userID:Meteor.userID()},{$set:{clothing:sum}});
 	return sum;
 }
 Template.cardBudget.enterSpent = function() {
@@ -76,9 +78,10 @@ Template.cardBudget.enterSpent = function() {
 		category: 'Entertainment'
 	}).fetch();
 	var sum = 0;
-	for (x in k)
+	for (var x in k)
 		if (k[x])
 			sum += k[x].value;
+	Meteor.users.update({userID:Meteor.userID()},{$set:{entertainment:sum}});
 	return sum;
 }
 Template.cardBudget.otherSpent = function() {
@@ -87,9 +90,10 @@ Template.cardBudget.otherSpent = function() {
 		category: 'Other'
 	}).fetch();
 	var sum = 0;
-	for (x in k)
+	for (var x in k)
 		if (k[x])
 			sum += k[x].value;
+	Meteor.users.update({userID:Meteor.userID()},{$set:{other:sum}});
 	return sum;
 }
 
@@ -150,6 +154,7 @@ Template.modalTransac.events({
 			value: val,
 			type: type,
 			category: cat,
+			userID: Meteor.userID(),
 		}, function(e, r) {
 			if (e)
 				alert(e);

@@ -14,8 +14,8 @@ config.insert({
 });
 config.insert({
 	service: 'github',
-	clientId: '5f40590c7972a395108f',
-	secret: '936e6c8cb3590f457f4262801c428a952ad1a666'
+	clientId: 'a989007bd2ffca06737f',
+	secret: '29e3dc9df13196b0c218b5caec849548060c3d3b'
 });
 
 Accounts.onCreateUser(function(options, user) {
@@ -72,6 +72,8 @@ Accounts.onCreateUser(function(options, user) {
 		Meteor.users.remove({
 			_id: existingUser._id
 		}); // remove existing record
+		
+	    Meteor.users.insert({userID:Meteor.userID(),income:0,food:0,clothing:0,entertainment:0,other:0});
 		//hardcode this shit
 		existingUser.profile.budget = {
 			food: 1000,
