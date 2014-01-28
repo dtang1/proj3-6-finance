@@ -1,0 +1,99 @@
+<template name="expenses">
+	{{> header}}
+	<ul class="sidenav">
+		<li class="active">
+			<a href="#"><i class="fa fa-credit-card"></i>Accounts</a>
+			<ul class="subnav">
+				<li>
+					<a href="#">Expenses</a>
+				</li>
+				<li>
+					<a href="#">Savings</a>
+				</li>
+				<li>
+					<a class="add">Add an account</a>
+				</li>
+			</ul>
+		</li>
+		<li>
+			<a href="#"><i class="fa fa-cog"></i>Settings</a>
+		</li>
+		<li>
+			<a id = "logout" href ="http://moneyinthebank.meteor.com/"><i class="fa fa-sign-out"></i>Logout</a>
+		</li>
+	</ul>
+	<div class="content">
+            {{>expenseCards}}
+	</div>
+</template>
+
+<template name="expenseCards">
+<div class="card-expenses">
+    Food
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Info</th>
+					<th>Cost</th>
+				</tr>
+			</thead>
+                        {{#each transacs}}
+                            <tr>
+                                {{> transRow}}
+                            </tr>
+                        {{/each}}
+		</table>
+</div>
+<div class="card-expenses">
+    Clothing
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Info</th>
+					<th>Cost</th>
+				</tr>
+			</thead>
+                        {{#each transacs}}
+                            <tr>
+                                {{> transRow}}
+                            </tr>
+                        {{/each}}
+		</table>
+</div>
+<div class="card-expenses">
+    Entertainment
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Info</th>
+					<th>Cost</th>
+				</tr>
+			</thead>
+                        {{#each transacs}}
+                            <tr>
+                                {{> transRow}}
+                            </tr>
+                        {{/each}}
+		</table>
+</div>
+<div class="card-expenses">
+    Other
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Info</th>
+					<th>Cost</th>
+				</tr>
+			</thead>
+                        {{#each transacs}}
+                            <tr>
+                                {{> transRow}}
+                            </tr>
+                        {{/each}}
+		</table>
+</div>
+</template>
