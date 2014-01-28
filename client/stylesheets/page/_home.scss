@@ -137,26 +137,32 @@
 		@extend %card;
 	}
 
-	.card-expenses {
+	.card-transactions {
 		@extend %card;
-		.button {
-			&.expense {
-				background-color: $red;
-			}
-			&.income {
-				background-color: $green;
-			}
+		.red {
+			color: $red;
 		}
-                .red {
-                    color: $red;
-                }
-                .green {
-                    color: $green;
-                }
+		.green {
+			color: $green;
+		}
+	}
+
+	.button {
+		&.expense {
+			background-color: $red;
+		}
+		&.income {
+			background-color: $green;
+		}
 	}
 
 	.card-budget {
 		@extend %card;
+		.button {
+			background-color: $green;
+			margin-bottom: 0;
+			margin-top: 0.5em;
+		}
 	}
 }
 @include home;

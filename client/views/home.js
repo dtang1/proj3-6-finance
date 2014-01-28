@@ -14,14 +14,14 @@ Template.home.events({
 		});
 	}
 });
-
+/*
 Template.cardExpenses.rendered = function() {
 	$('.button').click(function() {
 		$('#modal-container').css('display', 'block');
 		Session.set('transaction', $(this).attr('class').split(/\s+/)[2]);
 	});
-}
-
+}*/
+/*
 Template.cardExpenses.transacs = function() {
 	return Transactions.find({
 		userId: Meteor.userId()
@@ -30,86 +30,131 @@ Template.cardExpenses.transacs = function() {
 			date: -1
 		}
 	}).fetch();
-}
+};*/
 
-Template.cardBudget.foodBudg = function() {
-	//return Meteor.user.profile.budget.food;
-	return "10000";
-}
-Template.cardBudget.clothesBudg = function() {
-	//return Meteor.user.profile.budget.clothing;
-	return "10000";
-}
-Template.cardBudget.enterBudg = function() {
-	//return Meteor.user.profile.budget.entertainment;
-	return "10000";
-}
-Template.cardBudget.otherBudg = function() {
-	//return Meteor.user.profile.budget.other;
-	return "10000";
-}
-Template.cardBudget.foodSpent = function() {
-	var k = Transactions.find({
-		userId: Meteor.userId,
-		category: 'Food'
-	}).fetch();
-	var sum = 0;
-	for (var x in k)
-		if (k[x])
-			sum += k[x].value;
-	Meteor.users.update({userID:Meteor.userId()},{$set:{food:sum}});
-	return sum;
-}
-Template.cardBudget.clothesSpent = function() {
-	var k = Transactions.find({
-		userId: Meteor.userId,
-		category: 'Clothing'
-	}).fetch();
-	var sum = 0;
-	for (var x in k)
-		if (k[x])
-			sum += k[x].value;
-	Meteor.users.update({userID:Meteor.userId()},{$set:{clothing:sum}});
-	return sum;
-}
-Template.cardBudget.enterSpent = function() {
-	var k = Transactions.find({
-		userId: Meteor.userId,
-		category: 'Entertainment'
-	}).fetch();
-	var sum = 0;
-	for (var x in k)
-		if (k[x])
-			sum += k[x].value;
-	Meteor.users.update({userID:Meteor.userId()},{$set:{entertainment:sum}});
-	return sum;
-}
-Template.cardBudget.otherSpent = function() {
-	var k = Transactions.find({
-		userId: Meteor.userId,
-		category: 'Other'
-	}).fetch();
-	var sum = 0;
-	for (var x in k)
-		if (k[x])
-			sum += k[x].value;
-	Meteor.users.update({userID:Meteor.userId()},{$set:{other:sum}});
-	return sum;
-}
+var getCategories = function() {
+	return Meteor.user() ? Meteor.user().categories : [];
+};
 
-Template.cardBudget.foodPerc = function() {
-	return Template.cardBudget.foodSpent / Template.cardBudget.foodBudg * 100;
-}
-Template.cardBudget.clothesPerc = function() {
-	return Template.cardBudget.clothesSpent / Template.cardBudget.clothesBudg * 100;
-}
-Template.cardBudget.enterPerc = function() {
-	return Template.cardBudget.enterSpent / Template.cardBudget.enterBudg * 100;
-}
-Template.cardBudget.otherPerc = function() {
-	return Template.cardBudget.otherSpent / Template.cardBudget.enterBudg * 100;
-}
+var addCategory = function(cat) {
+	var category = {
+		name: cat
+	};
+	Meteor.users.update({
+		_id: Meteor.userId()
+	}, {
+		$addToSet: {categories: category}
+	});
+};
 
+//***** TRANSACTIONS ******
+Template.modalTransactions.helpers({
+	type: function() {
+		if (Session.get('transaction'))
+			return Session.get('transaction');
+	}
+});
+
+Template.modalOverlay.events({
+	'click': function() {
+		$('.modal-wrapper').css('display', 'none');
+	}
+});
+
+Template.cardTransactions.helpers({
+	'trans': function() {
+		return Meteor.user() ? Meteor.user().transactions : [];
+	}
+});
+
+// OTOD
+Template.cardTransactions.events({
+	'click .income': function() {
+		Session.set('transaction', 'income');
+		$('#modal-transactions').css('display', '');
+	},
+	'click .expense': function() {
+		Session.set('transaction', 'expense');
+		$('#modal-transactions').css('display', '');
+	}
+});
+
+// TODO
+Template.modalTransactions.events({
+	'click .button': function() {
+		var $modal = $('#modal-transactions');
+
+		var date = new Date($modal.find('input[name=yy]').val(), $modal.find('input[name=mm]').val(), $modal.find('input[name=dd]').val());
+		var desc = $modal.find('#desc').val();
+		var val = $modal.find('#value').val();
+		if (Session.get('transaction') == 'expense') {
+			val = -val;
+		}
+		var cat = $modal.find('#category').val();
+		addCategory(name);
+
+		var transaction = {
+			desc: desc,
+			amount: val,
+			category: cat,
+			date: date
+		};
+		Meteor.users.update({
+			_id: Meteor.userId()
+		}, {
+			$push: {transactions: transaction}
+		});
+		$('.modal-wrapper').css('display', 'none');
+	}
+});
+
+//****** BUDGET ******
+Template.cardBudget.helpers({
+	budgets: function() {
+		return Meteor.user() ? Meteor.user().budgets : [];
+	}
+});
+
+Template.cardBudget.events({
+	'click #addBudget': function() {
+		$('#modal-budgets').css('display', '');
+	}
+});
+
+Template.modalBudgets.helpers({
+	categories: getCategories
+});
+
+Template.modalBudgets.events({
+	'click .button': function() {
+		var $modal = $('#modal-budgets');
+		var name = $modal.find('#category').val();
+		addCategory(name);
+		var limit = $modal.find('#limit').val();
+		var transactions = Meteor.user().transactions;
+		var spent = 0;
+		for (var transaction in transactions) {
+			if (transaction.category === name) {
+				spent += (-transaction.amount);
+			}
+		}
+		var percent = Math.round((spent/limit) * 1000) / 10;
+		var budget = {
+			'name': name,
+			'spent': spent,
+			'limit': limit,
+			'percent': percent
+		};
+		Meteor.users.update({
+			_id: Meteor.userId()
+		}, {
+			$push: {budgets: budget}
+		});
+		$('.modal-wrapper').css('display', 'none');
+	}
+});
+
+/*
 Template.transRow.date = function() {
 	return this.date.getMonth() + 1 + "/" + this.date.getDate() + "/" + (this.date.getYear() + 1900)
 }
@@ -118,13 +163,6 @@ Template.transRow.expenseBool = function() {
 	return this.type == 'expense';
 }
 
-
-Template.modalOverlay.events({
-	'click': function() {
-		$('#modal-container').css('display', 'none');
-		Session.set('transaction', null);
-	}
-});
 
 Template.modalTransac.type = function() {
 	if (Session.get('transaction'))
@@ -135,7 +173,6 @@ Template.modalTransac.expenseBool = function() {
 	if (Session.get('transaction'))
 		return Session.get('transaction') == 'expense';
 }
-
 
 Template.modalTransac.events({
 	'click .button': function() {
@@ -162,6 +199,6 @@ Template.modalTransac.events({
 				console.log('woohooo');
 		});
 		$('.modal-expense').children().val('');
-		$('#modal-container').css('display', 'none');
+		$('.modal-wrapper').css('display', 'none');
 	}
-});
+});*/

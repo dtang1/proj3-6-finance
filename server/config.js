@@ -43,12 +43,28 @@ Accounts.onCreateUser(function(options, user) {
 			// set email as username
 			user.username = email;
 
+			user.transactions = [
+				{
+					name: "Bought pizza",
+					amount: -5,
+					category: 'Food',
+					date: new Date(2014, 5, 11)
+				}
+			]
 			user.budgets = [
 				{
 					name: "Food",
 					limit: 1000,
 					spent: 500,
 					percent: 50
+				}
+			];
+			user.categories = [
+				{
+					name: "Food"
+				},
+				{
+					name: "Clothing"
 				}
 			];
 			user.transactions = [];

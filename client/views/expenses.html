@@ -10,7 +10,7 @@
 				<li>
 					<a href="#">Savings</a>
 				</li>
-                                <!--
+				<!--
 				<li>
 					<a class="add">Add an account</a>
 				</li>
@@ -21,18 +21,18 @@
 			<a href="#"><i class="fa fa-cog"></i>Settings</a>
 		</li>
 		<li>
-			<a id = "logout" href ="http://moneyinthebank.meteor.com/"><i class="fa fa-sign-out"></i>Logout</a>
+			<a id="logout" href="http://moneyinthebank.meteor.com/"><i class="fa fa-sign-out"></i>Logout</a>
 		</li>
 	</ul>
 	<div class="content">
-            {{>expenseCards}}
+		{{>expenseCards}}
 	</div>
 </template>
 
 <template name="expenseCards">
-{{#if foodTransacs}}
-<div class="card-expenses">
-    Food
+	{{#if foodTransacs}}
+	<div class="card-expenses">
+		Food
 		<table>
 			<thead>
 				<tr>
@@ -41,17 +41,17 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each foodTransacs}}
-                            <tr>
-                                {{> transRow}}
-                            </tr>
-                        {{/each}}
+			{{#each foodTransacs}}
+			<tr>
+				{{> transRow}}
+			</tr>
+			{{/each}}
 		</table>
-            </div>
-            {{/if}}
-            {{#if clothesTransacs}}
-                <div class="card-expenses">
-    Clothing
+	</div>
+	{{/if}}
+	{{#if clothesTransacs}}
+	<div class="card-expenses">
+		Clothing
 		<table>
 			<thead>
 				<tr>
@@ -60,17 +60,17 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each clothesTransacs}}
-                            <tr>
-                                {{> transRow}}
-                            </tr>
-                        {{/each}}
+			{{#each clothesTransacs}}
+			<tr>
+				{{> transRow}}
+			</tr>
+			{{/each}}
 		</table>
-                </div>
-                {{/if}}
-                {{#if enterTransacs}}
-                <div class="card-expenses">
-    Entertainment
+	</div>
+	{{/if}}
+	{{#if enterTransacs}}
+	<div class="card-expenses">
+		Entertainment
 		<table>
 			<thead>
 				<tr>
@@ -79,17 +79,17 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each enterTransacs}}
-                            <tr>
-                                {{> transRow}}
-                            </tr>
-                        {{/each}}
+			{{#each enterTransacs}}
+			<tr>
+				{{> transRow}}
+			</tr>
+			{{/each}}
 		</table>
-                </div>
-                {{/if}}
-                {{#if otherTransacs}}
-                <div class="card-expenses">
-    Other
+	</div>
+	{{/if}}
+	{{#if otherTransacs}}
+	<div class="card-expenses">
+		Other
 		<table>
 			<thead>
 				<tr>
@@ -98,12 +98,12 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-                        {{#each otherTransacs}}
-                            <tr>
-                                {{> transRow}}
-                            </tr>
-                        {{/each}}
+			{{#each otherTransacs}}
+			<tr>
+				{{> transRow}}
+			</tr>
+			{{/each}}
 		</table>
-</div>
-{{/if}}
+	</div>
+	{{/if}}
 </template>

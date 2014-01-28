@@ -4,7 +4,17 @@ Meteor.publish("userData", function() {
 	}, {
 		fields: {
 			'budgets': true,
-			'transactions': true
+			'transactions': true,
+			'categories': true
 		}
 	});
 });
+
+Meteor.users.allow({
+	update: function() {
+		return true;
+	},
+	insert: function() {
+		return true;
+	}
+})

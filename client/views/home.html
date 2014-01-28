@@ -25,16 +25,17 @@
 		</li>
 	</ul>
 	<div class="content">
-		{{>cardExpenses}}
+		{{>cardTransactions}}
 		{{>cardBudget}}
 	</div>
-	{{> modalContainer}}
+	{{> modalTransactions}}
+	{{> modalBudgets}}
 </template>
 
-<template name="cardExpenses">
-	<div class="card-expenses">
-		<div class="button tiny income"><i class="fa fa-plus"></i>Income</div>
-		<div class="button tiny expense"><i class="fa fa-minus"></i>Expense</div>
+<template name="cardTransactions">
+	<div class="card-transactions">
+		<div class="addTransaction button tiny income"><i class="fa fa-plus"></i>Income</div>
+		<div class="addTransaction button tiny expense"><i class="fa fa-minus"></i>Expense</div>
 		<table>
 			<thead>
 				<tr>
@@ -44,117 +45,70 @@
 					<th>Cost</th>
 				</tr>
 			</thead>
-			{{#each transacs}}
+			{{#each trans}}
 			<tr>
-				{{> transRow}}
+				<th>{{date}}</th>
+				<th>{{category}}</th>
+				<th>{{desc}}</th>
+				<th><b>{{amount}}</b></th>
 			</tr>
 			{{/each}}
 		</table>
 	</div>
 </template>
 
-<template name="transRow">
-	<th>{{date}}</th>
-	<th>{{category}}</th>
-	<th>{{description}}</th>
-	<th class="{{#if expenseBool}}red{{else}}green{{/if}}"><b>{{value}}</b>
-	</th>
-</template>
-
 <template name="cardBudget">
 	<div class="card-budget">
 		<h4>Budget</h4>
+		{{#each budgets}}
 		<div class="budget-item">
 			<div class="progress-label">
 				<span class="name">
-					Food
+					{{name}}
 				</span>
 				<span class="budget">
-					${{foodSpent}}/${{foodBudg}}
+					${{spent}}/${{limit}}
 				</span>
 			</div>
 			<div class="progress round">
-				<span class="meter" style="width: {{foodPerc}}%"></span>
+				<span class="meter" style="width: {{percent}}%"></span>
 			</div>
 		</div>
-		<div class="budget-item">
-			<div class="progress-label">
-				<span class="name">
-					Clothing
-				</span>
-				<span class="budget">
-					${{clothesSpent}}/${{clothesBudg}}
-				</span>
-			</div>
-			<div class="progress round">
-				<span class="meter" style="width: {{clothesPerc}}%"></span>
-			</div>
-		</div>
-		<div class="budget-item">
-			<div class="progress-label">
-				<span class="name">
-					Entertainment
-				</span>
-				<span class="budget">
-					${{enterSpent}}/${{enterBudg}}
-				</span>
-			</div>
-			<div class="progress round">
-				<span class="meter" style="width: {{enterPerc}}%"></span>
-			</div>
-		</div>
-		<div class="budget-item">
-			<div class="progress-label">
-				<span class="name">
-					Other
-				</span>
-				<span class="budget">
-					${{otherSpent}}/${{otherBudg}}
-				</span>
-			</div>
-			<div class="progress round">
-				<span class="meter" style="width: {{otherPerc}}%"></span>
+		{{/each}}
+		<div id="addBudget" class="button tiny">Add a Budget</div>
+	</div>
+</template>
+
+<template name="modalTransactions">
+	<div id="modal-transactions" class="modal-wrapper" style="display:none">
+		{{> modalOverlay}}
+		<div class="modal" role="dialog">
+			<div class="modal-expense">
+				<h2>{{type}}</h2>
+				<input id="desc" type="text" placeholder="description">
+				<input id="value" type="text" style="width:100%" placeholder="value">
+				<input id="category" type="text" placeholder="category">
+				<input type="text" maxlength="2" name="mm" placeholder="mm" style="width:20%">
+				<input type="text" maxlength="2" placeholder="dd" name="dd" style="width:20%">
+				<input type="text" maxlength="4" placeholder="yyyy" name="yy" style="width:20%">
+				<div class="button {{type}}">Add</div>
 			</div>
 		</div>
 	</div>
 </template>
 
-<template name="modalContainer">
-	<div style="display:none" id="modal-container">
+<template name="modalBudgets">
+	<div id="modal-budgets" class="modal-wrapper" style="display:none">
 		{{> modalOverlay}}
-		<div id="modal" role="dialog">
-			<div class="modal-inner">
-				{{> modalTransac}}
-			</div>
+		<div class="modal" role="dialog">
+			<h2>Add Budget</h2>
+			<input id="category" type="text" placeholder="category">
+			<input id="limit" type="text" placeholder="budget (eg. 1000)">
+			<div class="button">Add</div>
 		</div>
 	</div>
-
 </template>
 
 <template name="modalOverlay">
-	<div id="modal-overlay"></div>
-</template>
-
-<template name="modalTransac">
-	<div class="modal-expense">
-		<h2>{{type}}</h2>
-		<input type="text" maxlength="2" name="mm" placeholder="mm" style="width:50px" />
-		<input type="text" maxlength="2" placeholder="dd" name="dd" style="width:50px" />
-		<input type="text" maxlength="4" placeholder="yyyy" name="yy" style="width:70px" />
-		<input id="value" type="text" style="width:80px" placeholder="value" />
-		<select id="category">
-			{{#if expenseBool}}
-			<option>Food</option>
-			<option>Clothing</option>
-			<option>Entertainment</option>
-			<option>Other</option>
-			{{else}}
-			<option>Salary</option>
-			<option>Bonus</option>
-			<option>Gift</option>
-			{{/if}}
-		</select>
-		<input id="description" type="text" placeholder="description" />
-		<div class="button {{type}}">Add</div>
-	</div>
+	<div class="modal-overlay"></div>
 </template>

@@ -11,7 +11,7 @@
 		@include span-columns(12);
 	}
 
-	.card-expenses .button {
+	.card-transactions .button {
 		&.expense {
 			@include span-columns(6 of 12);
 			@include omega;
@@ -21,8 +21,12 @@
 		}
 	}
 
+	.card-budget .button {
+		width: 100%;
+	}
+
 	@media #{$breakpoint} {
-		.card-expenses {
+		.card-transactions {
 			@include span-columns(6);
 			.button {
 				border-radius: 2px;

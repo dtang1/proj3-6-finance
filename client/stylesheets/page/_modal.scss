@@ -1,63 +1,86 @@
-#modal-overlay {
-	background-color:rgba(0,0,0,.5);
-	width:100%;
-	height:100%;
-	position:fixed;
-	top:0;
-	left:0;
+.modal-wrapper {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	text-align: center;
+	font-size: 0;
+
+	&:before {
+		display: inline-block;
+		height: 100%;
+		vertical-align: middle;
+		font-size: 0;
+	}
+
+	.modal {
+		display: inline-block;
+		padding: 1em;
+		width: 100%;
+		background-color: $card-bg-color;
+		vertical-align: middle;
+		font-size: 16px;
+
+		h1, h3 {
+			margin: 0 auto;
+			text-align: center;
+			font-weight: 300;
+		}
+		h3 {
+			margin-top: 5px;
+			color: grey;
+			font-size: 1em;
+		}
+		.modal-expense {
+			input[type=text],
+			input[type=password],
+			input[type=email] {
+				display: inline-block;
+				box-sizing: border-box;
+				margin: 0px;
+				margin-bottom: 5px;
+				padding: 10px;
+				width: 100%;
+			}
+			select {
+				width: 100px;
+			}
+		}
+		.button {
+			margin-top: 5px;
+			margin-bottom: 5px;
+			width: 100%;
+		}
+	}
+
+	@media only screen and (min-width: 450px) {
+		&:before {
+			content: '';
+		}
+		.modal {
+			margin-top: 0;
+			width: 450px;
+		}
+	}
+
+	.modal-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		z-index: -1;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0,0,0,.5);
+	}
 }
 
-#modal {
-	position:absolute;
-	height:auto;
-        width:30%;
-        max-width:500px;
-	min-width:400px;
-	/*background-color:#E9E9E9;*/
-        background-color: $card-bg-color;
-        border-radius: 1px;
-	top:150px;
-	margin-left:-175px;
-	left:50%;
-	box-shadow: 0 1px 3px rgba(0,0,0,0.08);
-	font-size:1em;
-        .modal-expense{
-		input[type=text], input[type=password],input[type=email] {
-			margin:0px;
-			margin-bottom:5px;
-			padding:10px;
-			box-sizing:border-box;
-			width:100%;
-			display:inline-block;
-			
-		}
-                select {
-                    width:100px;
-                }
-            }
+#modal-budgets {
+	input {
+		width: 100%;
+	}
 	.button {
-		margin-top:5px;
-		margin-bottom:5px;
-		width:100%;
-                &.expense{
-                    background-color: $red;
-                }
-                &.income {
-                    background-color: $green;
-                }
-	}
-	.modal-inner {
-	    width:100%;
-		padding:5%;
-	}
-	h1, h3 {
-		margin: 0 auto;
-		text-align:center;
-		font-weight:300;
-	}
-	h3 {
-		color:grey;
-		font-size:1em;
-		margin-top:5px;
+		background-color: $green;
 	}
 }
+
