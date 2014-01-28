@@ -13,7 +13,8 @@
       "font-awesome-scss": {
         "git": "https://github.com/stevezhu/meteor-font-awesome-scss.git",
         "branch": "master"
-      }
+      },
+      "observatory": {}
     },
     "packages": {
       "iron-router": {
@@ -23,8 +24,8 @@
       },
       "fast-render": {
         "git": "https://github.com/arunoda/meteor-fast-render.git",
-        "tag": "v0.1.11",
-        "commit": "7514e0e8f6f387f7ba510eb633568831a066b481"
+        "tag": "v0.1.12",
+        "commit": "b190f1592401f4084ce54b8f713b134e35a4e0db"
       },
       "bourbon-scss": {
         "git": "https://github.com/stevezhu/meteor-bourbon.git",
@@ -46,6 +47,11 @@
         "branch": "master",
         "commit": "677a2277a8b21eda68307427144b37ce8037c633"
       },
+      "observatory": {
+        "git": "https://github.com/jhoxray/observatory.git",
+        "tag": "v0.3.21",
+        "commit": "3d6b436af0a70b784d0f9ec4709907c77bd4fd63"
+      },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",
         "tag": "v2.0.31",
@@ -55,6 +61,16 @@
         "git": "https://github.com/stevezhu/meteor-normalize.git",
         "tag": "v2.1.3.1",
         "commit": "16c1a484021a6bb2524c9ad87d082cc4c7abacf5"
+      },
+      "observatory-apollo": {
+        "git": "https://github.com/superstringsoftware/observatory-apollo.git",
+        "tag": "v0.3.2",
+        "commit": "f704848187a4da2bd179864ae80a1f73a3fd22a6"
+      },
+      "observatory-galileo": {
+        "git": "https://github.com/superstringsoftware/observatory-galileo.git",
+        "branch": "master",
+        "commit": "f21b80e6502d38a7ce66206374b706f2cbd0228d"
       }
     }
   }
