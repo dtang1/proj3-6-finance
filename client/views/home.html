@@ -36,8 +36,8 @@
 
 <template name="cardTransactions">
 	<div class="card-transactions">
-		<div class="addTransaction button tiny income"><i class="fa fa-plus"></i>Income</div>
-		<div class="addTransaction button tiny expense"><i class="fa fa-minus"></i>Expense</div>
+		<div class="button income"><i class="fa fa-plus"></i>Income</div>
+		<div class="button expense"><i class="fa fa-minus"></i>Expense</div>
 		<table>
 			<thead>
 				<tr>
@@ -61,23 +61,27 @@
 
 <template name="cardBudget">
 	<div class="card-budget">
-		<h4>Budget</h4>
-		{{#each budgets}}
-		<div class="budget-item">
-			<div class="progress-label">
-				<span class="name">
-					{{name}}
-				</span>
-				<span class="budget">
-					${{spent}}/${{limit}}
-				</span>
-			</div>
-			<div class="progress round">
-				<span class="meter" style="width: {{percent}}%"></span>
-			</div>
-		</div>
-		{{/each}}
-		<div id="addBudget" class="button tiny">Add a Budget</div>
+		<h4>Budgets</h4>
+		{{#if budgets.length}}
+			{{#each budgets}}
+				<div class="budget-item">
+					<div class="progress-label">
+						<span class="name">
+							{{name}}
+						</span>
+						<span class="budget">
+							${{spent}}/${{limit}}
+						</span>
+					</div>
+					<div class="progress round">
+						<span class="meter" style="width: {{percent}}%"></span>
+					</div>
+				</div>
+			{{/each}}
+		{{else}}
+			<p>You have no budgets right now. Click "Add a Budget" to start!</p>
+		{{/if}}
+		<div id="addBudget" class="button">Add a Budget</div>
 	</div>
 </template>
 
@@ -86,14 +90,19 @@
 		{{> modalOverlay}}
 		<div class="modal" role="dialog">
 			<div class="modal-expense">
-				<h2>{{type}}</h2>
+				{{#isolate}}
+				<h2>Add {{type}}</h2>
+				{{/isolate}}
 				<input id="desc" type="text" placeholder="description">
 				<input id="value" type="text" style="width:100%" placeholder="value">
 				<input id="category" type="text" placeholder="category">
+				<!--
 				<input type="text" maxlength="2" name="mm" placeholder="mm" style="width:20%">
 				<input type="text" maxlength="2" placeholder="dd" name="dd" style="width:20%">
 				<input type="text" maxlength="4" placeholder="yyyy" name="yy" style="width:20%">
-				<div class="button {{type}}">Add</div>
+				-->
+				<input class="datepicker" type="text" placeholder="date" readonly=readonly>
+				<input type="submit" value="Add" class="button">
 			</div>
 		</div>
 	</div>

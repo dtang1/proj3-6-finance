@@ -11,6 +11,7 @@
       "git": "https://github.com/stevezhu/meteor-font-awesome-scss.git"
     },
     "observatory": {},
-    "moment": {}
+    "moment": {},
+    "pickadate.js-scss": {}
   }
 }

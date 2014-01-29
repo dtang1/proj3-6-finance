@@ -7118,13 +7118,17 @@ table {
     font-weight: 300; }
 
 /* line 36, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+p {
+  margin: 0; }
+
+/* line 40, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
 .fa, .sidenav ul.subnav a:before {
   text-align: center; }
 
-/* line 40, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+/* line 44, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
 .button {
   padding: 0.8em 1.4em; }
-  /* line 42, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
+  /* line 46, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/general/general */
   .button .fa, .button .sidenav ul.subnav a:before {
     margin-right: 0.5em; }
 
@@ -7262,15 +7266,20 @@ table {
   color: #60B602; }
 
 /* line 151, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
-.button.expense {
+.button.red, .button.expense {
   background-color: #DA453E; }
-/* line 154, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
-.button.income {
+  /* line 153, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  .button.red:hover {
+    background-color: #d62f29; }
+/* line 157, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+.button.green, .button.income, .card-budget .button {
   background-color: #60B602; }
+  /* line 159, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+  .button.green:hover {
+    background-color: #549d02; }
 
-/* line 161, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
+/* line 173, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/home */
 .card-budget .button {
-  background-color: #60B602;
   margin-bottom: 0;
   margin-top: 0.5em; }
 
@@ -7359,23 +7368,24 @@ table {
   /* line 17, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
   .modal-wrapper .modal {
     display: inline-block;
+    margin-top: -100px;
     padding: 1em;
     width: 100%;
     background-color: #FAFAFA;
     vertical-align: middle;
     font-size: 16px; }
-    /* line 25, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
+    /* line 26, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
     .modal-wrapper .modal h1, .modal-wrapper .modal h3 {
       margin: 0 auto;
       text-align: center;
       font-weight: 300; }
-    /* line 30, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
+    /* line 31, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
     .modal-wrapper .modal h3 {
       margin-top: 5px;
       color: grey;
       font-size: 1em; }
     /* line 38, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
-    .modal-wrapper .modal .modal-expense input[type=text], .modal-wrapper .modal .modal-expense input[type=password], .modal-wrapper .modal .modal-expense input[type=email] {
+    .modal-wrapper .modal input[type=text], .modal-wrapper .modal input[type=password], .modal-wrapper .modal input[type=email] {
       display: inline-block;
       box-sizing: border-box;
       margin: 0px;
@@ -7383,22 +7393,22 @@ table {
       padding: 10px;
       width: 100%; }
     /* line 46, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
-    .modal-wrapper .modal .modal-expense select {
+    .modal-wrapper .modal select {
       width: 100px; }
-    /* line 50, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
+    /* line 49, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
     .modal-wrapper .modal .button {
       margin-top: 5px;
       margin-bottom: 5px;
       width: 100%; }
   @media only screen and (min-width: 450px) {
-    /* line 58, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
+    /* line 57, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
     .modal-wrapper:before {
       content: ''; }
-    /* line 61, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
+    /* line 60, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
     .modal-wrapper .modal {
       margin-top: 0;
       width: 450px; } }
-  /* line 67, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
+  /* line 66, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
   .modal-wrapper .modal-overlay {
     position: fixed;
     top: 0;
@@ -7408,10 +7418,10 @@ table {
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); }
 
-/* line 79, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
+/* line 78, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
 #modal-budgets input {
   width: 100%; }
-/* line 82, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
+/* line 81, /Users/steve/Desktop/code/proj3-6-finance/client/stylesheets/page/modal */
 #modal-budgets .button {
   background-color: #60B602; }
 

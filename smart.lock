@@ -15,7 +15,8 @@
         "branch": "master"
       },
       "observatory": {},
-      "moment": {}
+      "moment": {},
+      "pickadate.js-scss": {}
     },
     "packages": {
       "iron-router": {
@@ -57,6 +58,11 @@
         "git": "https://github.com/acreeger/meteor-moment.git",
         "tag": "v2.5.1",
         "commit": "8c9bc5d3fc96705057737cb9743d555417f6e551"
+      },
+      "pickadate.js-scss": {
+        "git": "https://github.com/stevezhu/meteor-pickadate.js-scss.git",
+        "tag": "v3.3.21",
+        "commit": "f62fea12ca4a081752568e930b2b50fd8f113a76"
       },
       "jquery": {
         "git": "https://github.com/nrafter/meteor-jquery.git",

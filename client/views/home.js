@@ -11,7 +11,7 @@ var addCategory = function(cat) {
 	updateUser({$addToSet: {categories: category}});
 };
 
-// LOGOUT
+//****** LOGOUT ******
 Template.home.events({
 	"click #logout": function(e, tmpl) {
 		Meteor.logout(function(err) {
@@ -25,36 +25,42 @@ Template.home.events({
 });
 
 //***** TRANSACTIONS ******
+Session.setDefault('transaction', 'Income');
+
+Template.cardTransactions.helpers({
+	'transactions': function() {
+		if (Meteor.user()) {
+			var transactions = Meteor.user().transactions;
+			transactions = _.map(transactions, function(transaction) {
+				transaction.date = moment(transaction.date).format('MMM D, YYYY');
+				return transaction;
+			});
+			return transactions;
+		}
+		return [];
+	}
+});
+
 Template.modalTransactions.helpers({
 	type: function() {
-		if (Session.get('transaction')) {
-			return Session.get('transaction');
-		}
+		return Session.get('transaction');
 	}
 });
 
 Template.modalOverlay.events({
 	'click': function() {
-		$('.modal-wrapper').css('display', 'none');
-	}
-});
-
-Template.cardTransactions.helpers({
-	'transactions': function() {
-		return Meteor.user() ? Meteor.user().transactions : [];
+		$('.modal-wrapper').css('display', 'none').removeClass('income expense');
 	}
 });
 
 Template.cardTransactions.events({
 	'click .income': function() {
-		console.log("income");
-		//Session.set('transaction', 'income');
-		$('#modal-transactions').css('display', '');
+		Session.set('transaction', 'Income');
+		$('#modal-transactions').addClass('income').css('display', '');
 	},
 	'click .expense': function() {
-		console.log("expenses");
-		//Session.set('transaction', 'expense');
-		$('#modal-transactions').css('display', '');
+		Session.set('transaction', 'Expense');
+		$('#modal-transactions').addClass('expense').css('display', '');
 	}
 });
 
@@ -62,20 +68,19 @@ Template.modalTransactions.events({
 	'click .button': function() {
 		var $modal = $('#modal-transactions');
 
-		var date = new Date($modal.find('input[name=yy]').val(), $modal.find('input[name=mm]').val(), $modal.find('input[name=dd]').val())
-			,desc = $modal.find('#desc').val()
-			,amount = $modal.find('#value').val();
-		if (Session.get('transaction') == 'expense') {
-			amount = -amount;
-		}
-		var cat = $modal.find('#category').val();
+		var desc = $modal.find('#desc').val()
+			,amount = $modal.find('#value').val()
+			,cat = $modal.find('#category').val()
+			,date = new Date($modal.find('input[name=yy]').val(), $modal.find('input[name=mm]').val(), $modal.find('input[name=dd]').val())
+			,isExpense = Session.equals('transaction', 'Expense');
 		addCategory(name);
 
 		var transaction = {
 			desc: desc,
 			amount: amount,
 			category: cat,
-			date: date
+			date: date,
+			isExpense: isExpense
 		};
 		updateUser({$push: {transactions: transaction}});
 		$('.modal-wrapper').css('display', 'none');
@@ -123,3 +128,17 @@ Template.modalBudgets.events({
 		$('.modal-wrapper').css('display', 'none');
 	}
 });
+
+Template.home.rendered = function() {
+};
+Template.modalTransactions.rendered = function() {
+	$('#modal-transactions').find('.datepicker').pickadate({
+		format: 'mmmm d, yyyy'
+	});
+};
+
+Template.modalBudgets.rendered = function() {
+	$('#modal-budgets').find('.datepicker').pickadate({
+		format: 'mmmm d, yyyy'
+	});
+};

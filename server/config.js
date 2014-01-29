@@ -35,7 +35,6 @@ Accounts.onCreateUser(function(options, user) {
 			user.profile = options.profile;
 		}
 		var service = _.keys(user.services)[0];
-
 		var email = getEmail(user, service);
 		var existingUser = Meteor.users.findOne({'username': email});
 
@@ -43,40 +42,14 @@ Accounts.onCreateUser(function(options, user) {
 			// set email as username
 			user.username = email;
 
-			user.transactions = [
-				{
-					name: "Bought pizza",
-					amount: -5,
-					category: 'Food',
-					date: new Date(2014, 5, 11)
+			// add empty lists
+			var models = ["budgets", "transactions", "categories"];
+			for (var model in models) {
+				if (!user[model]) {
+					user[model] = [];
 				}
-			]
-			user.budgets = [
-				{
-					name: "Food",
-					limit: 1000,
-					spent: 500,
-					percent: 50
-				}
-			];
-			user.categories = [
-				{
-					name: "Food"
-				},
-				{
-					name: "Clothing"
-				}
-			];
-			user.transactions = [];
-			return user;
-		}
-
-		// add empty lists
-		var models = ["budgets", "transactions", "categories"];
-		for (var model in models) {
-			if (!user[model]) {
-				user[model] = [];
 			}
+			return user;
 		}
 
 		// copy across new service info

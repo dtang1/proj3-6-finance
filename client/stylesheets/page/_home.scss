@@ -148,18 +148,30 @@
 	}
 
 	.button {
-		&.expense {
+		&.red {
 			background-color: $red;
+			&:hover {
+				background-color: darken($red, 5%);
+			}
+		}
+		&.green {
+			background-color: $green;
+			&:hover {
+				background-color: darken($green, 5%);
+			}
+		}
+		&.expense {
+			@extend .button.red;
 		}
 		&.income {
-			background-color: $green;
+			@extend .button.green;
 		}
 	}
 
 	.card-budget {
 		@extend %card;
 		.button {
-			background-color: $green;
+			@extend .button.green;
 			margin-bottom: 0;
 			margin-top: 0.5em;
 		}
